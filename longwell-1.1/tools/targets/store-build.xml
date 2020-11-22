@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<project name="store">
+
+  <description>
+    Persistent Store Targets
+  </description>
+
+	<!-- creating a persistant store is complicated. To make a test store run ant clean, then 
+	ant test, then follow these instructions based on the Postgres instructions here	
+	http://jena.sourceforge.net/DB/postgresql-howto.html
+	1. Start the IPC daemon (I'm running on Cygwin so this may be Cygwin specific)
+	ipc-daemon2 &
+	2. Initialise postgres:
+	initdb -D /usr/local/pgsql/data
+	3. Start postgres:
+	postmaster -i -D /usr/local/pgsql/data > logfile 2>&1 &
+	4. Create a postgres database called "similedemo"
+	createdb similedemo
+	5. start up the postgres interactive interface and create a user called simile e.g.
+	psql similedemo
+	create user simile;
+	\q
+	6. then run run ant persistant-store-test, which will copy the data into the database.
+	-->		
+	
+  <target name="persistant-store-demo" 
+          depends="init,haystack-simile-demo"
+          description="Load demo dataset into Postgres. SLOW.">
+    <java classname="LoadDb" classpath="${classDir};${appClasspath}">
+       <arg value="${buildDir}/SimileDemoMappingInference.rdf"/>
+       <arg value="similedemo"/>
+       <arg value="SIMILEsubset"/>
+       <arg value="simile"/>
+    </java>		
+  </target>
+	
+	<!--
+	If you want to make a persistant store with the entire data set, do the above but run
+	ant clean and ant all first. Beware - creating the dataset is likely to take over an
+	hour, and upload is going to take of the order of hours. Use this target to
+	create a model with the correct name -->
+
+  <!--
+<target name="persistant-store-entire" 
+    depends="init"
+    description="Load the entire dataset into Postgres. VERY SLOW">
+		<java classname="LoadDb" 
+			classpath="${classDir};${appClasspath}">
+			<arg value="${buildDir}"/>
+			<arg value="similedemo"/>
+			<arg value="SIMILEentire"/>
+			<arg value="simile"/>
+      <jvmarg value="-Xmx128m"/>
+		</java>
+	</target>
+  -->
+
+</project>

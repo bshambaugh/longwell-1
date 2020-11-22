@@ -1,0 +1,119 @@
+/*
+ * This is a metadata-specific stylesheet that has dependencies on metadata ontologies.
+ * 
+ */
+ 
+/*
+ * FIXME: Using the property label is not particularly good for CSS
+ *        In the future, maybe sub'ing spaces and other non-CSS
+ *        characters with valid characters;
+ */
+
+#results .result {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#results .inbound {
+    padding-top: 5px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#results .inbound .trigger {
+    cursor: pointer;
+}
+
+#results .inbound .trigger img {
+    padding-right: 5px;
+}
+
+#results .inbound .trigger span {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#results .inbound ul {
+    margin: 10px 10px 10px 15px;
+    padding: 0;
+    list-style: none;
+}
+
+#results .inbound li .label {
+    display: inline;
+    font-weight: bold;
+    font-family: "Georgia", serif;
+    font-size: 1.0em;
+    color: #333;
+}
+
+#results .thumbnail {
+    text-align: center;
+    padding-right: 5px;
+    border-right: 1px solid #ddd;
+}   
+
+#results .properties {
+    font-size: 12px;
+    padding-left: 10px;
+}   
+
+#results .thumbnail img {
+	padding: 10px;
+}
+
+#results .title,.Title, #results .label {
+    font-family: "verdana", "helvetica", "arial", sans-serif;
+    font-size: 16px;
+    margin: 10px 0px 10px 0px;
+    color: #333;
+    font-weight: normal;
+}
+
+#results .Description {
+	padding: 10px;
+	color: #111;
+}
+
+.Title .label {
+    display: none;
+}
+
+#results .label .label {
+    display: none;
+}
+
+#results .Description .label {
+    display: none;
+}
+
+#results div.Thumbnail {
+    display: none;
+}
+
+#results .metadata {
+    float: right;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+#results .property .label {
+    font-weight: bold;
+    font-family: "Georgia", serif;
+    font-size: 1.0em;
+    color: #333;
+}
+
+#results .Source {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+#results .Source .label {
+    display: none;
+}

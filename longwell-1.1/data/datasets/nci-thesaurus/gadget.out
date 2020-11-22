@@ -1,0 +1,56 @@
+ Unicity Frequency Uniques XPath
+-----------------------------------------------------------------
+ 100% 27652 27652 /rdf:RDF/owl:Class/@rdf:ID
+      27652 27652 /rdf:RDF/owl:Class/code/
+      27652 27652 /rdf:RDF/owl:Class/id/
+      27652 27652 /rdf:RDF/owl:Class/rdfs:label/
+      27634 27634 /rdf:RDF/owl:Class/Preferred_Name/
+      12580 12580 /rdf:RDF/owl:Class/TEMP_CUI/
+         70    70 /rdf:RDF/owl:ObjectProperty/@rdf:ID
+         70    70 /rdf:RDF/owl:ObjectProperty/code/
+         70    70 /rdf:RDF/owl:ObjectProperty/id/
+         39    39 /rdf:RDF/owl:AnnotationProperty/@rdf:ID
+         36    36 /rdf:RDF/owl:AnnotationProperty/code/
+         36    36 /rdf:RDF/owl:AnnotationProperty/id/
+         35    35 /rdf:RDF/owl:Class/Related_Lash_Concept/
+          3     3 /rdf:RDF/owl:Class/OLD_PARENT/
+          3     3 /rdf:RDF/owl:Ontology/rdfs:comment/
+          2     2 /rdf:RDF/owl:Class/Citation/
+          2     2 /rdf:RDF/owl:Class/Related_MedDRA_Code/
+          1     1 /rdf:RDF/@xml:base
+          1     1 /rdf:RDF/@xmlns
+          1     1 /rdf:RDF/@xmlns:owl
+          1     1 /rdf:RDF/@xmlns:rdf
+          1     1 /rdf:RDF/@xmlns:rdfs
+          1     1 /rdf:RDF/owl:Ontology/@rdf:about
+          1     1 /rdf:RDF/owl:Ontology/owl:versionInfo/
+  99%  7929  7927 /rdf:RDF/owl:Class/UMLS_CUI/
+        294   292 /rdf:RDF/owl:Class/CTRM_ID/
+  98%  1169  1152 /rdf:RDF/owl:Class/Encodes_Protein/
+        429   424 /rdf:RDF/owl:Class/NSC_Code/
+  97% 77529 75502 /rdf:RDF/owl:Class/FULL_SYN/
+  96%   136   131 /rdf:RDF/owl:Class/Image_Link/
+         33    32 /rdf:RDF/owl:Class/LONG_DEFINITION/
+  95% 48025 45966 /rdf:RDF/owl:Class/Synonym/
+  93% 18536 17330 /rdf:RDF/owl:Class/DEFINITION/
+  83%  4361  3662 /rdf:RDF/owl:Class/Display_Name/
+        715   597 /rdf:RDF/owl:Class/DesignNote/
+  82%  2141  1772 /rdf:RDF/owl:Class/Editor_Note/
+  81%  1632  1326 /rdf:RDF/owl:Class/Locus_ID/
+  79%   209   166 /rdf:RDF/owl:Class/Homologous_Gene/
+  78%   408   322 /rdf:RDF/owl:Class/GenBank_Accession_Number/
+  76%    69    53 /rdf:RDF/owl:Class/PubMedID_Primary_Reference/
+  73%  1415  1033 /rdf:RDF/owl:Class/OMIM_Number/
+  66%   920   613 /rdf:RDF/owl:Class/Swiss_Prot/
+  50%   132    66 /rdf:RDF/owl:Class/Mitelman_Code/
+  23% 13961  3292 /rdf:RDF/owl:Class/rdfs:subClassOf/owl:Restriction/owl:someValuesFrom/@rdf:resource
+  21% 32839  6918 /rdf:RDF/owl:Class/rdfs:subClassOf/@rdf:resource
+         70    15 /rdf:RDF/owl:ObjectProperty/rdfs:range/@rdf:resource
+  15%    70    11 /rdf:RDF/owl:ObjectProperty/rdfs:domain/@rdf:resource
+  13%   412    55 /rdf:RDF/owl:Class/Maps_To_LASH/
+   1%  2126    25 /rdf:RDF/owl:Class/Subsource/
+         56     1 /rdf:RDF/owl:Class/DC_Anatomy/
+   0% 28834   162 /rdf:RDF/owl:Class/Semantic_Type/
+      26578     1 /rdf:RDF/owl:Class/hasType/
+      13961    50 /rdf:RDF/owl:Class/rdfs:subClassOf/owl:Restriction/owl:onProperty/@rdf:resource
+        740     1 /rdf:RDF/owl:Class/Review_Status/

@@ -1,0 +1,46 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix bib:     <http://www.ontoweb.org/ontology/1#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "SIMILE browser display configuration" ;
+    dc:creator      "Ryan Lee" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-08-04" ;
+    dc:format       "RDF" .
+
+# Display parts
+:Bibliography a disp:BrowserConfiguration .
+
+:Bibliography disp:displayProperties (
+ bib:title
+ bib:author
+ bib:year
+ bib:journal
+ bib:volume
+ bib:number
+ bib:pages
+ bib:howpublished
+ dc:title
+ skos:definition
+ dc:creator
+) .
+
+:Bibliography disp:displayFacets (
+ rdf:type
+) .
+
+:Bibliography disp:displayClasses (
+ bib:Publication
+ skos:Concept
+) .
+
+:Bibliography disp:propertyObjectDisplay (
+ bib:howpublished
+) .
+
+bib:howpublished a disp:Link .

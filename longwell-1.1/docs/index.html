@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://simile.mit.edu/styles/default.css" type="text/css">
+  <title>SIMILE | Longwell</title>
+  <style>
+     #body {
+        margin-bottom: 220px;
+     }
+    </style>
+</head>
+<body>
+<!--#include virtual="sidebar.html" -->
+<ul id="path">
+  <li><a href="http://simile.mit.edu/" title="Home">SIMILE</a></li>
+  <li><span>Longwell</span></li>
+</ul>
+<div id="body">
+<h1>Longwell</h1>
+<h2>What is this?</h2>
+<p>Longwell is a suite of web-based <a href="http://www.w3.org/RDF/">RDF</a>
+browsers.</p>
+<h2>What can I do with this?</h2>
+<p>You can browse and search arbitrarely complex RDF datasets using
+different styles:</p>
+<ul>
+  <li>an end-user friendly view (where all the complexity of RDF is
+hidden)</li>
+  <li>an RDF-aware view (where all the details are shown)</li>
+</ul>
+<p>But it's probably better if you <a
+ href="http://simile.mit.edu/longwell/demo/tr/longwell">try it yourself</a>
+and get a
+feeling of what it is like.</p>
+<h2>Why was it built?</h2>
+<p>The SIMILE Project deals with applying <a
+ href="http://www.w3.org/2001/sw/">semantic web technologies</a> to
+digital libraries and for the team needed a way to be able to browse
+and search arbitrary RDF datasets, also to prototype different user
+interface scenarios that could be useful to end-users, to digital
+librarians and to metadata analysts.</p>
+<p>While other RDF browser technologies exist (for example, the
+outstanding <a href="http://haystack.lcs.mit.edu">Haystack Project</a>)
+since the end goal of the SIMILE Project is integration with <a
+ href="http://www.dspace.org">DSpace</a>, which is a server side
+web-based application, we needed a web-based approach and a simple
+architecture tuned to our needs that allowed us to prototype faster.</p>
+<h2>Technology and Requirements</h2>
+<p>Longwell is a web application written in Java that depends on the
+following libraries for operation:</p>
+<ul>
+  <li><a href="http://jakarta.apache.org/velocity/">Apache Velocity</a>
+as the template engine</li>
+  <li><a href="http://jakarta.apache.org/lucene/">Apache Lucene</a> as
+the search engine</li>
+  <li><a href="http://jena.sourceforge.net/">Jena</a> as the RDF
+support library (parsing, storing, querying)</li>
+</ul>
+<p>and it has the following requirements:</p>
+<ul>
+  <li>A <a href="http://www.java.com/">Java 1.4</a> or later
+compatible virtual machine for your operating
+system.</li>
+  <li>the JAVA_HOME environment variable must be set to the
+installation directory of the java virtual machine in your system.</li>
+  <li>[OPTIONAL] A Servlet 2.3 or later compatible application server.</li>
+</ul>
+<p class="note">Longwell ships with a servlet container for easy
+bootstrap,
+but it can be installed in any servlet-compatible or J2EE application
+server.</p>
+<h2>Ok, I'm interested, now what?</h2>
+<p>The best place to start is the Longwell <a href="guide.html">user
+guide</a>.</p>
+<h2>Where do I download it?</h2>
+<p>You can obtain Longwell in two different ways:<br>
+</p>
+<ol>
+  <li>download a <a href="http://simile.mit.edu/dist/longwell/">prepackaged
+distribution</a><br>
+  </li>
+  <li>download the files directly from the code repository.</li>
+</ol>
+<p>In case you want to download the files from the repository (for
+example, if you want to have the latest and greatest development
+snapshot), you need to have a <a href="http://subversion.tigris.org/">Subversion</a>
+client installed. At this point, just type</p>
+<pre>svn co http://simile.mit.edu/repository/longwell/trunk/ longwell<br></pre>
+<p>at the command line and the latest longwell distribution will appear
+in the "longwell" directory.<br>
+</p>
+<h2>Licensing and legal issues</h2>
+<p>Longwell is open source software and is licensed under the BSD
+license located in the LICENSE.txt file located in the root of the
+distribution.</p>
+<p>Note however, that this software ships with libraries that are not
+released under the same license, that we are redistributing them
+untouched and each of them are licensed according to the terms of the
+license files located in the ./legal subdirectory of the distribution.</p>
+<h2>Credits</h2>
+<p>This software was created by the SIMILE project and originally
+written by:</p>
+<ul>
+  <li><a href="http://www.hpl.hp.com/personal/marbut/">Mark Butler</a>
+&lt;mark-h.butler at hp.com&gt;</li>
+  <li><a href="http://www.w3.org/People/ryanlee/">Ryan Lee</a>
+&lt;ryanlee at w3.org&gt;</li>
+  <li><a href="http://www.betaversion.org/%7Estefano/">Stefano Mazzocchi</a>
+&lt;stefanom at mit.edu&gt;</li>
+</ul>
+</div>
+<!--#include virtual="../footer.html" -->
+</body>
+</html>

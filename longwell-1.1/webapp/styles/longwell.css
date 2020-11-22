@@ -1,0 +1,297 @@
+/*
+ * This is the stylesheet for the longwell browser. It assumes
+ * that the default stylesheet is inherited.
+ * 
+ * NOTE: no metadata-specific style information should be contained here
+ *
+ */
+
+/* ------- header colors indicate the browser ---- */
+ 
+#header {
+    background-color: #f0f0d0;
+    border-bottom: 1px solid #e0e0d0;
+}
+ 
+/* ------- Restrictions --------------------- */
+
+#restrictions {
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+#restrictions .top {
+    margin: 2px 5px 3px 5px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+#restrictions .top .title {
+    font-weight: bold;
+}
+
+#restrictions .middle {
+    margin: 5px;
+    padding: 5px;
+}
+
+#restrictions .middle .info {
+    color: #bbb;
+    text-align: center;
+}
+
+#restrictions .bottom {
+    text-align: right;
+    margin: 3px 5px 2px 5px;
+    padding-top: 3px;
+    border-top: 1px solid #d8d8d8;
+}
+
+#restrictions .bottom .results {
+    font-weight: bold;
+}
+
+#restrictions .restriction .facet {
+    text-transform: uppercase;
+}
+
+#restrictions .restriction .value {
+}    
+
+#restrictions .control {
+    color: #bbb;
+    padding-left: 5px;
+}
+
+#restrictions .control a {
+    color: #bbb;
+}
+
+/* ------- Browsers --------------------------- */
+
+#browsers {
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+/* ------- File Additions ------------------ */
+
+#additions {
+    margin: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+#additions .title {
+	letter-spacing: 0.10em;
+	color: #888;
+}
+
+#additions .error {
+	color: #300;
+	font-style: italic;
+	padding: 3px;
+}
+
+#additions .uribox {
+	padding: 3px 7px 3px 7px;
+	margin: 0px;
+	font-family: "georgia", "times", "times new roman", serif;
+	color: #111;
+	margin: 0px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 16px;
+}
+
+#additions input {
+	color: #888;
+	border: 1px solid #ddd;
+	-moz-border-radius: 16px;
+}
+
+/* ------- Free Text Search ------------------ */
+
+#freetextsearch {
+	margin: 5px;
+	padding: 0px 0px 12px 0px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#freetextsearch .title {
+    letter-spacing: 0.10em;
+	color: #888;
+}
+
+#freetextsearch .searchbox {
+	padding: 3px 7px 3px 7px;
+	margin: 0px;
+    font-family: "georgia", "times", "times new roman", serif;
+	color: #111;
+	margin: 0px;
+    border: 1px solid #ccc;
+    -moz-border-radius: 16px;
+}
+
+#freetextsearch input {
+	color: #888;
+	border: 1px solid #ddd;
+    -moz-border-radius: 16px;
+}
+
+/* ------- Facet Search ------------------ */
+
+#facetsearch input {
+	color: #888;
+	border: 1px solid #ddd;
+    -moz-border-radius: 16px;
+}
+
+#facetsearch .title {
+	letter-spacing: 0.10em;
+	color: #888;
+}
+
+#facetsearch .searchbox {
+	padding: 3px 7px 3px 7px;
+	margin: 0px;
+	font-family: "georgia", "times", "times new roman", serif;
+	color: #111;
+	margin: 0px;
+	border: 1px solid #ccc;
+	-moz-border-radius: 16px;
+}
+
+#facetsearch {
+	margin: 5px;
+	padding: 0px 0px 2px 0px;
+	text-align: center;
+}
+
+/* ------- Language Select ---------- */
+#langselect {
+	margin: 5px;
+	padding: 0px 0px 12px 0px;
+	text-align: center;
+}
+
+#langselect select {
+	color: #888;
+	border: 1px solid #ddd;
+	-moz-border-radius: 16px;
+	font-family: "georgia", "times", "times new roman", serif;
+}
+
+#langselect .title {
+	letter-spacing: 0.10em;
+	color: #888;
+}
+
+#langselect input {
+	color: #888;
+	border: 1px solid #ddd;
+	-moz-border-radius: 16px;
+}
+
+/* ------- Sorting ------------------ */
+
+#sorting {
+	margin: 0px;
+	padding-top: 6px;
+    text-align: center;
+}
+
+#sorting .title {
+    letter-spacing: 0.10em;
+	color: #888;
+}
+
+#sorting .inputs {
+	color: #bbb;
+}
+
+/* ------- Browser  -------------------------- */
+
+.browser {
+    border: 1px solid #ccc;
+    margin: 10px;
+}
+
+.browser .title {
+    background-color: #eee;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+    padding: 2px 5px 2px 5px;
+}
+
+.browser .trigger {
+    cursor: pointer;
+}
+ 
+.browser .title .trigger {
+    margin-left: 10px;
+}
+
+.browser .scrollable {
+    overflow: auto; 
+    height: 200px;
+    padding: 3px 0px 3px 5px;
+    background-color: white;
+}
+
+.browser .box {
+    padding: 3px 0px 3px 5px;
+    background-color: white;
+}
+
+.browser .multiple {
+    margin: 5px 10px 5px 0px;
+}
+
+.browser .branch {
+    margin: 0px 0px 5px 5px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 3px 20px 5px 10px;
+}
+
+.browser a:link {
+    text-decoration: none;
+    color: #000;
+}
+
+.browser a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+.browser a:focus {
+    text-decoration: none;
+    color: #000;
+}
+
+.browser a:hover {
+    text-decoration: underline;
+}
+
+.browser a:active {
+}
+
+/* this means that a term is an equivalent term,     */
+/* i.e., it is the subject of an owl:sameAs relation */
+.browser .equivalent { 
+    font-style: italic;
+}
+
+/* ------------ Paging ---------------------------- */
+
+.paging {
+    font-family: "verdana", "helvetica", "arial", sans-serif;
+    text-align: center;
+    padding: 10px;
+}

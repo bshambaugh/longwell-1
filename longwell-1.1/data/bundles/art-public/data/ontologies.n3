@@ -1,0 +1,29 @@
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:	      <http://www.w3.org/2002/07/owl#> .
+@prefix dc:        <http://purl.org/dc/elements/1.1/> .
+@prefix vra:       <http://simile.mit.edu/2003/10/ontologies/vraCore3#> .
+@prefix person:    <http://simile.mit.edu/2003/10/ontologies/person#> .
+@prefix via:       <http://simile.mit.edu/2004/06/ontologies/via#> .
+@prefix art:       <http://simile.mit.edu/2003/10/ontologies/artstor#> .
+
+<http://simile.mit.edu/2004/02/ontologies/mappings#>
+	rdf:type        owl:Ontology ;
+    dc:creator      "Mark Butler" ;
+    dc:creator      "Stefano Mazzocchi" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:title        "Mappings between the various ontologies" ;
+    dc:date         "2004-02-17" ;
+    dc:format       "RDF" .
+
+# --- Classes Mappings -----
+
+person:Person rdfs:subClassOf vra:Entity .
+vra:creator rdfs:range  person:Person .
+
+# --- Properties Mappings ------
+
+dc:contributor   owl:equivalentProperty    vra:creator .
+dc:subject       owl:equivalentProperty    vra:subject .
+via:topic        owl:equivalentProperty    art:topic .
+via:producer     owl:equivalentProperty    vra:creator .

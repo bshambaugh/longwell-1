@@ -1,0 +1,53 @@
+#!/usr/bin/perl
+
+@file = {};
+$ns = "http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#";
+
+open(IN, "Thesaurus.owl") ||
+    die "Could not open\n";
+
+while(<IN>) {
+    push @file, $_;
+}
+
+close(IN) ||
+    die "Could not close\n";
+
+print <<EOM;
+\@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+\@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+\@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+\@prefix nci:     <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+\@prefix :        <#> .
+
+owl:Class rdfs:label "Class" .
+owl:ObjectProperty rdfs:label "Object Property" .
+owl:AnnotationProperty rdfs:label "Annotation Property" .
+EOM
+
+foreach $line (@file) {
+    if ($line =~ /AnnotationProperty rdf:ID="([^"]*)"/) {
+        $id = $label = $1;
+        $label =~ s/_/ /g;
+        if ($label eq "hasType") { $label = "Has Type"; }
+        if ($label eq "DesignNote") { $label = "Design Note"; }
+        if ($label eq "FULL SYN") { $label = "Full Synonym"; }
+        if ($label eq "DEFINITION") { $label = "Definition"; }
+        if ($label eq "OLD CHILD") { $label = "Old Child"; }
+        if ($label eq "OLD KIND") { $label = "Old Kind"; }
+        if ($label eq "OLD PARENT") { $label = "Old Parent"; }
+        if ($label eq "OLD ROLE") { $label = "Old Role"; }
+        if ($label eq "OLD STATE") { $label = "Old State"; }
+        if ($label eq "LONG DEFINITION") { $label = "Long Definition"; }
+        if ($label eq "PARENT") { $label = "Parent"; }
+        print "nci:" . $id . " rdfs:label \"" . $label . "\" . \n";
+    }
+
+    if ($line =~ /ObjectProperty rdf:ID="r([^"]*)"/) {
+        $label = $1;
+        $line =~ /ObjectProperty rdf:ID="([^"]*)"/;
+        $id = $1;
+        $label =~ s/_/ /g;
+        print "nci:" . $id . " rdfs:label \"" . $label . "\" . \n";
+    }
+}

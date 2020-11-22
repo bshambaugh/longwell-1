@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<project name="data-processing">
+
+  <description>
+    Data Processing Targets
+  </description>
+
+  <target name="test-jena-inferencer" 
+    depends="prepare,artstorSchemas,ocwSchemas,skosSchema,unzipdata,convertLocTGM,demoData"
+    description="Test that the Jena inferencer can process the SIMILE demo dataset correctly.">
+      <java classname="BuildDemoData"
+          classpath="${classDir};${appClasspath}"
+          fork="true">
+          <jvmarg value="-Xmx512m"/>
+          <arg value="webapps/repository/WEB-INF/etc/build/"/>
+          <arg value="jena"/>
+        </java>
+	</target>
+  
+  <target name="authorities" 
+    depends="prepare,artstorSchemas,ocwSchemas,skosSchema,unzipdata,demoData,compile"
+    description="Lookup individuals in demo datasets using web based authority services">
+      <java classname="edu.mit.simile.tools.Authorities"
+          classpath="${classDir};${appClasspath}"
+          fork="true"
+          output="${build.data}/authorities.n3">
+          <jvmarg value="-Xmx512m"/>
+          <!-- configure firewall here -->
+          <jvmarg value="-Dhttp.proxyHost=garlic.hpl.hp.com"/>
+          <jvmarg value="-Dhttp.proxyPort=8088"/>
+          <arg value="webapps/repository/WEB-INF/etc/build/"/>
+          <arg value="jena"/>
+        </java>
+	</target>
+
+  <target name="test-distance" 
+    depends="prepare,artstorSchemas,ocwSchemas,skosSchema,unzipdata,convertLocTGM,demoData"
+    description="Calculate distance measures between all literals in the demo dataset">
+    <copy file="${data}/distancefields.n3" todir="${build.data}"/>
+      <java classname="edu.mit.simile.tools.Distance"
+            classpath="${classDir};${appClasspath}"
+            fork="true"
+            output="${build.data}/overlap.n3">
+          <jvmarg value="-Xmx512m"/>
+          <arg value="${build.data}"/>
+          <arg value="jena"/>
+        </java>
+   </target>
+
+</project>

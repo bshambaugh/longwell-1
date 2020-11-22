@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project name="haystack">
+  
+  <description>
+    Haystack targets
+  </description>
+
+  <!--+
+      | this target requires the HAYSTACK_HOME environment variable to be set.
+      | It builds the schemas and datasets, then copies them to the directory Vineet 
+      | specified in Haystack 
+      +-->
+
+  <target name="haystack-simile" 
+    depends="init,artstorSchemas,ocwSchemas,skosSchema,unzipdata,convertLocTGM,artstorData,ocwData"
+    description="Build entire dataset and schemas for Haystack. SLOW.">    
+		<property name="simile" value="${env.HAYSTACK_HOME}/src/adenine/demo/simile"/>
+		<copy todir="${simile}">
+			<fileset dir="${buildDir}">
+				<include name="*.rdf"/>
+			</fileset>
+		</copy>
+  </target>
+	
+  <target name="haystack-simile-demo" 
+    depends="init,artstorSchemas,ocwSchemas,skosSchema,unzipdata,convertLocTGM,demoData"
+    description="Build demo dataset and schemas for Haystack.">
+      <java classname="BuildDemoData"
+          classpath="${classDir};${appClasspath}"
+          fork="true">
+          <jvmarg value="-Xmx256m"/>
+          <arg value="webapps/repository/WEB-INF/etc/build/"/>
+          <arg value="webapps/repository/WEB-INF/data.properties"/>
+        </java>
+		<property name="simile" value="${env.HAYSTACK_HOME}/src/adenine/demo/simile"/>
+		<copy todir="${simile}">
+			<fileset dir="${sourceDir}">
+				<include name="*.ad"/>
+			</fileset>
+		</copy>
+		<property name="simile" value="${env.HAYSTACK_HOME}/src/adenine/demo/simile"/>
+		<copy todir="${simile}">
+			<fileset dir="${buildDir}">
+				<include name="simileDemoNoInference.rdf"/>
+                                <include name="simileDemoSubClassInferenceOnly.rdf"/>
+                                <include name="simileDemoMappingInference.rdf"/>
+			</fileset>
+		</copy>
+   </target>
+
+</project>

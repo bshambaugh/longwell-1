@@ -1,0 +1,37 @@
+#*
+* Patchway user interface template
+*#
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>The SIMILE Project | Patchway</title>
+    <link rel="stylesheet" href="styles/default.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/patchway.css" type="text/css"/>
+  </head>
+  
+  <body>
+    
+    <div id="header">
+      <h1>Patchway</h1>
+      <h2>an RDQL interface</h2>
+    </div>
+
+	<div id="queryform">
+
+	<p>Enter an RDQL query (<a href="http://www.hpl.hp.com/semweb/rdql.htm">read up on RDQL</a> if you aren't familiar with it):</p>
+    
+    <form action="" method="get">
+    	     <textarea name="query" rows="5" cols="60">SELECT * WHERE (?x &lt;rdf:type&gt; ?z)</textarea><br />
+    	     <input type="submit" value=" Query " />
+    </form>
+    </div>
+    
+    <div id="footer">
+      <p>The <a href="http://simile.mit.edu/">SIMILE</a> Project</p>
+    </div>
+    
+  </body>
+  
+</html>

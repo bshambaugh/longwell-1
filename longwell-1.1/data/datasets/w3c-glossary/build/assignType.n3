@@ -1,0 +1,16 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc:   <http://purl.org/dc/elements/1.1/> .
+@prefix doc:  <http://www.w3.org/2000/10/swap/pim/doc#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix log:  <http://www.w3.org/2000/10/swap/log#> .
+@prefix str:  <http://www.w3.org/2000/10/swap/string#> .
+@prefix gloss: <http://simile.mit.edu/2004/04/ontologies/glossary#> .
+
+{ ?X skos:prefLabel ?Y . } => { ?X dc:title ?Y . } .
+
+{ ?X dc:title [ ] .
+  ?X dc:date  [ ] . } => { ?X a doc:Work . } .
+
+{ ?X dc:title ?Y . } => { ?X rdfs:label ?Y . } .
+
+{ ?X rdfs:isDefinedBy ?Y } => { ?Y gloss:defines ?X } .

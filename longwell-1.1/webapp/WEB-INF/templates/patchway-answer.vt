@@ -1,0 +1,7 @@
+#*
+* Patchway machine interface template
+*#
+
+#if($answer)
+$answer
+#end

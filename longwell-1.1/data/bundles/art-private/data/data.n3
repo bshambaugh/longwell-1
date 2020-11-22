@@ -1,0 +1,761 @@
+@prefix rdf:       <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:      <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:       <http://www.w3.org/2002/07/owl#> .
+
+@prefix vra:       <http://simile.mit.edu/2003/10/ontologies/vraCore3#> .
+@prefix art:       <http://simile.mit.edu/2003/10/ontologies/artstor#> .
+@prefix person:    <http://simile.mit.edu/2003/10/ontologies/person#> .
+@prefix ocw:       <http://simile.mit.edu/2004/01/ontologies/ocw#> .
+@prefix disp:      <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix oclc:      <http://simile.mit.edu/2004/04/oclc#> .
+@prefix wikipedia: <http://simile.mit.edu/2004/04/wikipedia#> .
+
+## -------------------------------- duplicate images -----------------------------
+
+## FIXME: mapping these duplicate images doesn't work as yet ... because for some images in OCW 
+## we use the same URI to identify the metadata about the image as 
+## the image this introduces a confusion
+
+<http://simile.mit.edu/2003/10/artstor/Id#UCSD_41822000913630>
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/LearningResource#liver_is_the_cocks_comb_1944> .
+
+## hand created mappings 
+
+<http://simile.mit.edu/2003/10/artstor/Subject#calder,_alexander,1898-1976>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#calder,_alexander> ;
+  .
+  
+<http://simile.mit.edu/2003/10/artstor/Creator#brady,_mathew_b.,1823_(ca.)-1896>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#brady,_mathew> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#jones,_caroline_a.>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs  <http://simile.mit.edu/2004/01/ocw/Contributor#prof._caroline_jones>
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#acconci,_vito>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#acconci> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#haring,_keith>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#haring,_keith,1958-1990>	;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#freud,_lucian>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#lucian_freud> ;
+  .
+  
+<http://simile.mit.edu/2003/10/artstor/Subject#eroticism>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAS <http://simile.mit.edu/2004/04/loc/tgm#Erotica> ;
+  .
+
+## automatically generated stuff from here on
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#jorn,_asger,1914-1973>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#jorn,_asger,1914-1973> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#wesselmann,_tom,1931->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#wesselmann,_tom,1931-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#defeo,_jay,1929->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#defeo,_jay,1929-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#graham,_john,1881-1961>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#graham,_john,1881-1961> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#graham,_john,1881-1961> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#murray,_elizabeth,1940->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#murray,_elizabeth,1940-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#noland,_kenneth,1924->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#noland,_kenneth,1924-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#lichtenstein,_roy,1923->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#lichtenstein,_roy,1923-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#lichtenstein,_roy,1923-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#smithson,_robert>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#smithson,_robert> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#smithson,_robert> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#art_tatum_trio>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#art_tatum_trio> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#louis,_morris,1912-1962>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#louis,_morris,1912-1962> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#baldessari,_john,1931->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#baldessari,_john,1931-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#motherwell,_robert>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#motherwell,_robert> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#motherwell,_robert> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#picasso,_pablo,1881-1973>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#picasso,_pablo,1881-1973> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#indiana,_robert,1928->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#indiana,_robert,1928-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/site#smithsonian_institution>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.si.edu> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/site#1new_york,_metropolitan_museum_of_art>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/site#new_york,_metropolitan_museum_of_art> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#cage,_john>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#cage,_john> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#saar,_betye>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#saar,_betye> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#saar,_betye> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#lin,_maya_ying>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#lin,_maya_ying> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#lin,_maya_ying> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#calder,_alexander,1898-1976>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#calder,_alexander,1898-1976> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#calder,_alexander,1898-1976> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#dickens,_charles,1812-1870>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#dickens,_charles,1812-1870> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#matisse,_henri,1869-1954>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#matisse,_henri,1869-1954> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#turrell,_james>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#turrell,_james> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#benton,_thomas_hart,1889-1975>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#benton,_thomas_hart,1889-1975> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#benton,_thomas_hart,1889-1975> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#halley,_peter>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#halley,_peter> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#lange,_dorothea>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#lange,_dorothea> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#lange,_dorothea> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#brecht,_george>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#brecht,_george> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#baca,_judith_francisca>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#baca,_judith_francisca> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#serra,_richard,1939->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#serra,_richard,1939-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#brown,_joan,1938->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#brown,_joan,1938-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#haring,_keith>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#haring,_keith> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#artschwager,_richard,1924->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#artschwager,_richard,1924-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#dixon,_james_budd,1900-1967>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#dixon,_james_budd,1900-1967> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#bischoff,_elmer,1916->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#bischoff,_elmer,1916-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#lobdell,_frank,1921->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#lobdell,_frank,1921-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#gorky,_arshile,1904-1948>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#gorky,_arshile,1904-1948> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#gorky,_arshile,1904-1948> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#diebenkorn,_richard,1922->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#diebenkorn,_richard,1922-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#park,_david,1911-1960>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#park,_david,1911-1960> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#hockney,_david>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#hockney,_david> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#rothko,_mark,1903-1970>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#rothko,_mark,1903-1970> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#rivera,_diego,1886-1957>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#rivera,_diego,1886-1957> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#rauschenberg,_robert,1925->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#rauschenberg,_robert,1925-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#marisol,1930->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#marisol,1930-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#gottlieb,_adolph,1903-1974>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#gottlieb,_adolph,1903-1974> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#kelly,_ellsworth,1923->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#kelly,_ellsworth,1923-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#kelly,_ellsworth,1923-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#oliveira,_nathan,1928->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#oliveira,_nathan,1928-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#newman,_barnett,1905-1970>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#newman,_barnett,1905-1970> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#newman,_barnett,1905-1970> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#levine,_sherrie>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#levine,_sherrie> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#kahlo,_frida>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#kahlo,_frida> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#kahlo,_frida> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#lewitt,_sol,1928->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#lewitt,_sol,1928-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#jess,1923->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#jess,1923-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#paschke,_ed>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#paschke,_ed> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#pollock,_jackson,1912-1956>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#pollock,_jackson,1912-1956> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#close,_chuck,1940->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#close,_chuck,1940-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#close,_chuck,1940-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#goya,_francisco,1746-1828>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#goya,_francisco,_1746-1828.> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#goya,_francisco,1746-1828> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#evans,_minnie,1892->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#evans,_minnie,1892-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#flack,_audrey>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#flack,_audrey> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#flack,_audrey> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#bidlo,_mike>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#bidlo,_mike> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#mitchell,_joan,1926->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#mitchell,_joan,1926-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#yoshihara_jiro>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#yoshihara,_jiro> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#duchamp,_marcel,1887-1968>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#duchamp,_marcel,1887-1968> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#de_kooning,_willem,1904->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#de_kooning,_willem,1904-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#hartigan,_grace,1922->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#hartigan,_grace,1922-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#hartigan,_grace,1922-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#krasner,_lee,1908->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#krasner,_lee,1908-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#krasner,_lee,1908-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#kozloff,_joyce,1942->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#kozloff,_joyce,1942-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#maciunas,_george,1931-1978>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#maciunas,_george,1931-1978> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#kline,_franz,1910-1962>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#kline,_franz,1910-1962> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#kline,_franz,1910-1962> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#cornell,_joseph>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Creator#cornell,_joseph> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#cornell,_joseph> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#anderson,_laurie,1947->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#anderson,_laurie,1947-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#ernst,_max,1891-1976>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#ernst,_max,1891-1976> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#moore,_henry,1898->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#moore,_henry,1898-> ;
+  .
+
+<http://simile.mit.edu/2004/01/ocw/Contributor#oldenburg,_claes,1929->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#oldenburg,_claes,1929-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#ringgold,_faith>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#ringgold,_faith> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#ringgold,_faith> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#weems,_carrie_mae>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#weems,_carrie_mae> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/site#san_diego_museum_of_art>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/site#san_diego,_museum_of_art> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#arneson,_robert,1930->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#arneson,_robert,1930-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#frankenthaler,_helen,1928->
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/01/ocw/Contributor#frankenthaler,_helen,1928-> ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#frankenthaler,_helen,1928-> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Creator#brady,_mathew_b.,1823_(ca.)-1896>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#brady,_mathew_b.,1823_(ca.)-1896> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#satire>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Satires> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#mausoleums>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Mausoleums> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Cadavers>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#cadavers> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Freeways>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#freeways> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#malnutrition>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Malnutrition> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#political_violence>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Political+violence> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Friars>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#friars> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Topic#art_doc._ref.>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Topic#art_doc._ref.:> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Aristocracy>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#aristocracy> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Topic#prints>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#prints> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Wood+cuts>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#woodcuts> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#dishes>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Dishes> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#burial>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Burials> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#exorcism>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#exorcisms> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Pillage>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#pillage> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#ceremonies>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Ceremonies> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#swords>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Swords> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Topic#performance_art>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#performance_art> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#united_states>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Geographic#united_states> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Torture>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#torture> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#still_life>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#still-life> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Rural+life>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#rural_life> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Workers>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#workers> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Intemperance>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#intemperance> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#confederate_states_of_america>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#confederate_states_of_america.> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#World>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Geographic#world> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Re-creations>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#recreation> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#urban_life>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Urban+life> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#wagons>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Wagons> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Catalogues>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#catalogues> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#pattern>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Patterns> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Mourning>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#mourning> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#exhibition_buildings>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Exposition+buildings> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Trains>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#trains> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#robbers>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Robbers> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#appropriation>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Appropriations> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Coaches>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#coaches> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Ornaments>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#ornament> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#family>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Family> ;
+  .
+  
+<http://simile.mit.edu/2003/10/artstor/Subject#mosaics>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Topic#mosaics> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#posters>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Topic#posters> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#copies>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Copies> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#miniatures>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Miniatures> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Processions>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#processions> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#portaits>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#portraits> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Domestic+violence>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#domestic_violence> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#maps>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Topic#maps> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Costume>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#costume> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Tombstones>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#tombstones> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#murder>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Murders> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#bullfighters>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#bullfights> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Topic#photography>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#photography> ;
+  .
+  
+<http://simile.mit.edu/2004/04/loc/tgm#Correspondents>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#correspondence> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Snowstorms>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#snowstorms> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Museums>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#museums> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Apparitions>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#apparitions> ;
+  .
+
+<http://simile.mit.edu/2004/04/loc/tgm#Oxen>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2003/10/artstor/Subject#oxen> ;
+  .
+
+<http://simile.mit.edu/2003/10/artstor/Subject#caskets>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://simile.mit.edu/2004/04/loc/tgm#Caskets> ;
+  .

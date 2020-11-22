@@ -1,0 +1,55 @@
+<project name="doap" default="data">
+
+	<!--+
+	    | Contract
+	    |
+	    |      call the "data" target with the following properties set:
+	    |              base is the location of this dataset package relative to the main build.xml file
+	    |              data.dest is where you want your data to end up 
+	    |              
+	    |  assumes all directories already exist
+	    |
+	    +-->
+	
+	<description>
+      Manages DOAP dependency data
+	</description>
+
+	<target name="data">
+      <if>
+      	<not><available file="${base}/data/doap.zip"/></not>
+        <then>
+         <mkdir dir="${base}/data/"/>
+		 <get src="http://simile.mit.edu/repository/datasets/doap/data/doap.zip" 
+             dest="${base}/data/doap.zip" 
+             verbose="true"
+             usetimestamp="true"
+	      />
+       	</then>
+      </if>		
+	  <unzip src="${base}/data/doap.zip" dest="${base}/data/" overwrite="false"/>
+	</target>
+	
+	<target name="copy-data">
+	 <copy todir="${data.dest}">
+      <fileset dir="${base}/data">
+        <include name="*.rdf"/>
+        <include name="*.n3"/>
+      </fileset>
+     </copy>
+	</target>
+	
+	<target name="clean">
+		<delete file="${base}/data/licenses.n3"/>
+		<delete file="${base}/data/doap-doap.rdf"/>
+		<delete file="${base}/data/edd-dumbill-foaf.rdf"/>
+		<delete file="${base}/data/freshmeat.n3"/>
+		<delete file="${base}/data/gnome-bluetooth-doap.rdf"/>
+		<delete file="${base}/data/licenses.n3"/>
+		<delete file="${base}/data/osdir.n3"/>
+		<delete file="${base}/data/redland-doap.rdf"/>
+		<delete file="${base}/data/sourceforge-topics.n3"/>
+		<delete file="${base}/data/sourceforge-ui.n3"/>
+	</target>
+
+</project>

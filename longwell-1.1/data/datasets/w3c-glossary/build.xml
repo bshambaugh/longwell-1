@@ -1,0 +1,89 @@
+<project name="glossary" default="data">
+
+	<!--+
+	    | Contract
+	    |
+	    |      call the "data" target with the following properties set:
+	    |              base is the location of this dataset package relative to the main build.xml file
+	    |              data.dest is where you want your data to end up 
+	    |              
+	    |  assumes all directories already exist
+	    |
+	    +-->
+		
+	<description>
+     Manages W3C Glossary metadata 
+	</description>
+
+	<target name="data">
+      <if>
+      	<not><available file="${base}/data/w3c-glossary.zip"/></not>
+        <then>
+         <mkdir dir="${base}/data/"/>        
+		 <get src="http://simile.mit.edu/repository/datasets/w3c-glossary/data/w3c-glossary.zip" 
+             dest="${base}/data/w3c-glossary.zip" 
+             verbose="true"
+             usetimestamp="true"
+	      />
+       	</then>
+      </if>		
+	  <unzip src="${base}/data/w3c-glossary.zip" dest="${base}/data/" overwrite="false"/>
+	</target>
+	
+	<target name="copy-data">
+	 <copy todir="${data.dest}">
+      <fileset dir="${base}/data">
+        <include name="*.rdf"/>
+        <include name="*.n3"/>
+      </fileset>
+     </copy>
+	</target>
+
+	<target name="clean">
+		<delete quiet="true" file="${base}/data/glossary.rdf"/>
+		<delete quiet="true" file="${base}/data/mappings.n3"/>
+		<delete quiet="true" file="${base}/data/ATAG10.rdf"/>
+		<delete quiet="true" file="${base}/data/CCPP-struct-vocab.rdf"/>
+		<delete quiet="true" file="${base}/data/CSS1.rdf"/>
+		<delete quiet="true" file="${base}/data/CSS2.rdf"/>
+		<delete quiet="true" file="${base}/data/DOM-Level-2-Events.rdf"/>
+		<delete quiet="true" file="${base}/data/DOM-Level-2-HTML.rdf"/>
+		<delete quiet="true" file="${base}/data/DOM-Level-2-Traversal-Range.rdf"/>
+		<delete quiet="true" file="${base}/data/DOM-Level-3-Events.rdf"/>
+		<delete quiet="true" file="${base}/data/MathML2.rdf"/>
+		<delete quiet="true" file="${base}/data/P3P.rdf"/>
+		<delete quiet="true" file="${base}/data/PNG.rdf"/>
+		<delete quiet="true" file="${base}/data/Process.rdf"/>
+		<delete quiet="true" file="${base}/data/REC-xml-names.rdf"/>
+		<delete quiet="true" file="${base}/data/REC-xml.rdf"/>
+		<delete quiet="true" file="${base}/data/TestGL.rdf"/>
+		<delete quiet="true" file="${base}/data/charreq.rdf"/>
+		<delete quiet="true" file="${base}/data/di-gloss.rdf"/>
+		<delete quiet="true" file="${base}/data/hypertext-terms.rdf"/>
+		<delete quiet="true" file="${base}/data/owl-guide.rdf"/>
+		<delete quiet="true" file="${base}/data/qa-glossary.rdf"/>
+		<delete quiet="true" file="${base}/data/rdf-mt.rdf"/>
+		<delete quiet="true" file="${base}/data/rdf-syntax.rdf"/>
+		<delete quiet="true" file="${base}/data/rfc2616-sec1.rdf"/>
+		<delete quiet="true" file="${base}/data/ruby.rdf"/>
+		<delete quiet="true" file="${base}/data/soap12-part1.rdf"/>
+		<delete quiet="true" file="${base}/data/specgl2.rdf"/>
+		<delete quiet="true" file="${base}/data/uuag10.rdf"/>
+		<delete quiet="true" file="${base}/data/voicexml20.rdf"/>
+		<delete quiet="true" file="${base}/data/w3c-jargon.rdf"/>
+		<delete quiet="true" file="${base}/data/wcag10.rdf"/>
+		<delete quiet="true" file="${base}/data/weaving.rdf"/>
+		<delete quiet="true" file="${base}/data/ws-gloss.rdf"/>
+		<delete quiet="true" file="${base}/data/xforms.rdf"/>
+		<delete quiet="true" file="${base}/data/xhtml-modularization.rdf"/>
+		<delete quiet="true" file="${base}/data/xhtml1.rdf"/>
+		<delete quiet="true" file="${base}/data/xlink.rdf"/>
+		<delete quiet="true" file="${base}/data/xml-names.rdf"/>
+		<delete quiet="true" file="${base}/data/xml-names11.rdf"/>
+		<delete quiet="true" file="${base}/data/xml11.rdf"/>
+		<delete quiet="true" file="${base}/data/xmlschema-2.rdf"/>
+		<delete quiet="true" file="${base}/data/xpath.rdf"/>
+		<delete quiet="true" file="${base}/data/xptr-framework.rdf"/>
+	</target>
+	
+</project>

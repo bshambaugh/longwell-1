@@ -1,0 +1,198 @@
+<!-- START : MACROS SECTION -->
+
+#macro (nextAndPreviousLinks)
+  #if($next || $previous)
+    <div class="paging">
+    (
+    #if($previous)
+      <a href="$base?$previous">previous</a>
+    #end
+    #if($next && $previous)
+      |
+    #end
+    #if($next)
+      <a href="$base?$next">next</a>
+    #end
+    )
+    </div>
+  #end
+#end
+
+#macro (renderRefs $base $fr)
+  #if ($fr.inbound && $fr.inbound.size() > 0)
+    <div class="otherrefs">
+    <h3>Other References</h3>
+    #foreach ($inboundname in $fr.inbound.keySet())
+      <div class="ref">
+      <strong>
+      #if($inboundname.isLiteral)
+        $inboundname.label
+      #else
+        #if($inboundname.label.equals("&lt;untitled&gt;"))
+          <a href="$base$inboundname.EncodedURI" title="$inboundname.altTitle" name="none">$inboundname.label</a>
+        #else
+          <a href="$base$inboundname.EncodedURI" title="$inboundname.altTitle">$inboundname.label</a>
+        #end
+      #end
+      </strong>
+      #foreach ($inbound in $fr.inbound.get($inboundname))
+        #if($inbound.label.equals("&lt;untitled&gt;"))
+          <a href="$base$inbound.EncodedURI" title="$inbound.altTitle" name="none">$inbound.label</a>
+        #else
+          <a href="$base$inbound.EncodedURI" title="$inbound.altTitle">$inbound.label</a>
+        #end
+        #if($velocityCount < $fr.inbound.get($inboundname).size())
+          ,
+        #end
+      #end
+      <em>this</em>
+      </div>
+    #end
+    </div>
+  #end
+#end
+
+#macro (renderFrame $base $fr)
+  <div class="objectHead">
+  <div class="objectTitle">
+  #if($fr.titles && $fr.titles.size() > 0)
+    #foreach($title in $fr.titles)
+      $title
+      #if ($velocityCount != $fr.titles.size())
+        |
+      #end
+    #end
+  #else
+    #if($fr.center)
+      Untitled
+      <div class="objectTitleURI">&lt;$fr.center&gt;</div>
+    #else
+      {{{Anonymous}}}
+    #end
+  #end
+  </div>
+  #if($fr.types && $fr.types.size() > 0)
+    <div class="objectType">
+    #if($fr.types.size() == 1)
+      Type:
+    #else
+      Types:
+    #end
+    #foreach($type in $fr.types)
+      #if($type.label.equals("&lt;untitled&gt;"))
+        <a href="$base$type.EncodedURI" title="$type.altTitle" id="type$velocityCount" name="none">$type.label</a>
+      #else
+        <a href="$base$type.EncodedURI" title="$type.altTitle" id="type$velocityCount">$type.label</a>
+      #end
+      #if ($velocityCount != $fr.types.size())
+        ,
+      #end
+    #end
+    </div>
+  #end
+  </div>
+  #if ($fr.literals && $fr.literals.size() > 0)
+    <table class="literals">
+    #foreach ($literalname in $fr.literals.keySet())
+      <tr class="literal">
+        #if($literalname.label.equals("&lt;untitled&gt;"))
+          <td class="label"><a href="$base$literalname.EncodedURI" title="$literalname.altTitle" name="none">$literalname.label</a>:</td>
+        #else
+          <td class="label"><a href="$base$literalname.EncodedURI" title="$literalname.altTitle">$literalname.label</a>:</td>
+        #end
+        <td class="value">
+      #foreach ($literal in $fr.literals.get($literalname))
+        $literal.label
+        #if ($velocityCount < $fr.literals.get($literalname).size())
+          ,
+        #end
+      #end
+        </td>
+      </tr>
+    #end
+    </table>
+  #end
+  #if ($fr.resources && $fr.resources.size() > 0)
+    <table class="resources">
+    #foreach ($resourcename in $fr.resources.keySet())
+      <tr class="resource">
+        #if($resourcename.label.equals("&lt;untitled&gt;"))
+          <td class="label"><a href="$base$resourcename.EncodedURI" title="$resourcename.altTitle" name="none">$resourcename.label</a>:</td>
+        #else
+          <td class="label"><a href="$base$resourcename.EncodedURI" title="$resourcename.altTitle">$resourcename.label</a>:</td>
+        #end
+        <td class="value">
+          <ul>
+      #set($resources = $fr.resources.get($resourcename))
+      #foreach ($resource in $resources)
+        #if($resource.label.equals("&lt;untitled&gt;"))
+          <li><a href="$base$resource.EncodedURI" title="$resource.altTitle" id="res$velocityCount" name="none">$resource.label</a></li>
+        #else
+          <li><a href="$base$resource.EncodedURI" title="$resource.altTitle" id="res$velocityCount">$resource.label</a></li>
+        #end
+      #end
+          </ul>
+        </td>
+      </tr>
+    #end
+    </table>
+  #end
+  #if ($fr.frames && $fr.frames.size() > 0)
+    <table class="frames">
+    #foreach ($subframename in $fr.frames.keySet())
+      <tr class="frame">
+        #if($subframename.label.equals("&lt;untitled&gt;"))
+          <td class="label"><a href="$base$subframename.EncodedURI" title="$subframename.altTitle" name="none">$subframename.label</a>:</td>
+        #else
+          <td class="label"><a href="$base$subframename.EncodedURI" title="$subframename.altTitle">$subframename.label</a>:</td>
+        #end
+        <td class="value">
+          <ul>
+          #foreach ($subframe in $fr.frames.get($subframename))
+            <li>#renderFrame($base $subframe)</li>
+          #end
+          </ul>
+        </td>
+      </tr>
+    #end
+    </table>
+  #end
+#end
+
+#macro (renderProps $base $fr)
+  #if ($fr.asProp && $fr.asProp.size() > 0)
+    <div class="otherprops">
+    <h3>Property Usage</h3>
+    #foreach ($aspropname in $fr.asProp.keySet())
+      <div class="ref">
+      #if($aspropname.isLiteral)
+        $aspropname.label
+      #else
+        #if($aspropname.label.equals("&lt;untitled&gt;"))
+          <a href="$base$aspropname.EncodedURI" title="$aspropname.altTitle" name="none">$aspropname.label</a>
+        #else
+          <a href="$base$aspropname.EncodedURI" title="$aspropname.altTitle">$aspropname.label</a>
+        #end
+      #end
+      <em>this</em>
+      #foreach ($asprop in $fr.asProp.get($aspropname))
+        #if($asprop.isLiteral)
+          $asprop.label
+        #else
+          #if($asprop.label.equals("&lt;untitled&gt;"))
+            <a href="$base$asprop.EncodedURI" title="$asprop.altTitle" name="none">$asprop.label</a>
+          #else
+            <a href="$base$asprop.EncodedURI" title="$asprop.altTitle">$asprop.label</a>
+          #end
+        #end
+        #if($velocityCount < $fr.asProp.get($aspropname).size())
+          ,
+        #end
+      #end
+      </div>
+    #end
+    </div>
+  #end
+#end
+
+<!-- END : MACROS SECTION -->

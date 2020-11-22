@@ -1,0 +1,24 @@
+<!--+
+    |
+    |           +=========================+
+    |           |  Longwell Build System  |
+    |           +=========================+
+    |
+    +-->
+
+<project default="webapp" basedir="." name="Longwell">
+
+  <import file="tools/targets/init-build.xml"/>
+  <import file="tools/targets/compile-build.xml"/>
+  <import file="tools/targets/webapp-build.xml"/>
+  <import file="tools/targets/ide-build.xml"/>
+  <import file="tools/targets/dist-build.xml"/>
+
+  <!-- NOTE(SM): these are not yet ported to the new build system -->
+	
+  <!--import file="tools/targets/haystack-build.xml"/-->
+  <!--import file="tools/targets/data-processing-build.xml"/-->
+  <!--import file="tools/targets/store-build.xml"/-->
+		
+</project>
+

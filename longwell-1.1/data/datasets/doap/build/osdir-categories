@@ -1,0 +1,46 @@
+#!/usr/bin/perl -w
+
+use strict;
+use LWP::UserAgent;
+
+my $base   = "http://osdir.com/";
+my $start  = $base . "Downloads.phtml";
+my $out = "osdir.n3";
+my $output = "\@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n";
+$output   .= "\@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n";
+
+open(OUT, ">$out") || die "can't open\n";
+print OUT $output;
+
+# Create a user agent object
+my $ua = LWP::UserAgent->new;
+$ua->agent("OSDirTopics");
+
+handlePage($start);
+
+sub toN3 {
+    my $list = shift;
+    my $parent = shift;
+    my $out  = "";
+    while($list =~ m/<a( | class="pn-normal" )href="([^"]*)">([^<]*)<\/a>/gi) {
+	$out .= "<" . $base . $2 . "> rdfs:label \"" . $3 . "\"\@en^^xsd:string .\n";
+        $out .= "<" . $base . $2 . "> rdfs:subClassOf <" . $parent . "> .\n";
+        sleep(2);
+        $out .= &handlePage($base . $2);
+    }
+    return $out;
+}
+
+sub handlePage {
+    my $url = shift;
+    my $req = HTTP::Request->new(GET => $url);
+    my $res = $ua->request($req);
+    if ($res->is_success) {
+	my $html = $res->content;
+	$html =~ m|<img src="modules/Downloads/images/icon_folder.gif"(.*?)</table>|si;
+	print OUT toN3($1, $url);
+    }
+    return ""
+}
+
+close(OUT) || die "can't close\n";

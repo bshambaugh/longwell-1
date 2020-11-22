@@ -1,0 +1,33 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "SIMILE browser display configuration" ;
+    dc:creator      "Stefano Mazzocchi" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-06-10" ;
+    dc:format       "RDF" .
+
+# Display parts
+:ontologies a disp:BrowserConfiguration .
+
+:ontologies disp:displayClasses (
+  rdfs:Class
+  rdf:Property
+) .
+
+:ontologies disp:displayFacets (
+ rdf:type
+ rdfs:subClassOf
+ rdfs:seeAlso
+) .
+
+:ontologies disp:displayProperties (
+ rdfs:label
+ rdfs:comment
+ dc:creator
+ dc:publisher
+) .

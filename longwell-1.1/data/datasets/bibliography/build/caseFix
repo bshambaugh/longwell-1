@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+my $filename = $ARGV[0];
+my $file = "";
+
+open(IN, "<$filename") || die "Could not open $filename\n";
+while(<IN>) {
+    $file .= $_;
+}
+close(IN) || die "Could not close $filename\n";
+
+$file =~ s/:misc/:Misc/g;
+$file =~ s/:inproceedings/:InProceedings/g;
+$file =~ s/:article/:Article/g;
+
+# comment, read, url not in schema
+
+print $file;

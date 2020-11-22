@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<project name="init">
+
+  <description>
+    Initialization Targets
+  </description>
+
+  <target name="start" depends="init">
+<echo>======================================================================
+                 ${fullname} ${version} [${year}]
+======================================================================
+ Building with ${ant.version}
+----------------------------------------------------------------------
+ Using build file ${ant.file}
+----------------------------------------------------------------------
+ Running on Java version ${ant.java.version}
+----------------------------------------------------------------------
+ Compiler options:
+   - debug ......... [${compiler.debug}]
+   - optimize ...... [${compiler.optimize}]
+   - deprecation ... [${compiler.deprecation}]
+======================================================================
+
+           Building ${Name} using ${bundle} data bundle
+                  
+</echo>
+  </target>
+    
+  <target name="init">
+
+    <!-- Set the timestamps -->
+    <tstamp/>
+
+    <!-- Detecting the current jvm -->
+    <condition property="target.vm" value="1.5">
+      <equals arg1="1.5" arg2="${ant.java.version}"/>
+    </condition>
+    <condition property="target.vm" value="1.4">
+      <equals arg1="1.4" arg2="${ant.java.version}"/>
+    </condition>
+    <condition property="target.vm" value="1.3">
+      <not>
+        <or>
+          <equals arg1="1.4" arg2="${ant.java.version}"/>
+          <equals arg1="1.5" arg2="${ant.java.version}"/>
+        </or>
+      </not>
+    </condition>
+
+    <!-- Allow users a chance to override without editing the main file -->
+    <property file="${user.home}/longwell.build.properties"/>
+    <property file="local.build.properties"/>
+
+    <!-- Get the build properties from an external file -->
+    <property file="build.properties"/>
+
+    <filter token="Name"                value="${fullname}"/>
+    <filter token="name"                value="${fullname}"/>
+    <filter token="year"                value="${year}"/>
+    <filter token="version"             value="${version}"/>
+    <filter token="date"                value="${TODAY}"/>
+    <filter token="loglevel"            value="${build.webapp.loglevel}"/>
+
+    <!-- Alias for the loglevel -->
+    <property name="loglevel" value="${build.webapp.loglevel}"/>
+
+    <!-- Ant-Contrib tasks -->
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+    
+    <!-- Set classpath -->
+    <path id="classpath">
+      <fileset dir="${lib}">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${lib.endorsed}">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${lib.repositories}">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${tools.jetty.lib}">
+        <include name="*servlet*.jar"/>
+      </fileset>
+      <fileset dir="${tools.lib}">
+        <include name="*.jar"/>
+      </fileset>
+      <path location="${build.dest}"/>
+      <path location="${build.tools}"/>
+      <path location="${vocabularies.bytecode}"/>
+    </path>
+
+    <!-- compile the loader, used to change classpath for jetty -->
+    <mkdir dir="${tools.loader.dest}"/>
+    <javac srcdir="${tools.loader.src}"
+           destdir="${tools.loader.dest}"
+           debug="off"
+           optimize="on"
+           deprecation="on"
+           target="1.3"
+           nowarn="on"
+           compiler="${compiler}"/>
+
+  </target>
+
+<!-- === Preparation Targets ============================================= -->
+
+  <target name="prepare" depends="init">
+    <mkdir dir="${build}"/>
+    <mkdir dir="${build.dest}"/>
+  </target>
+
+  <target name="prepare-tools" depends="init">
+    <mkdir dir="${build.tools}"/>
+  </target>
+
+  <target name="prepare-vocabularies" depends="init">
+    <mkdir dir="${vocabularies.code}"/>
+    <mkdir dir="${vocabularies.bytecode}"/>
+  </target>
+  
+  <!-- Check if external libraries have been added -->
+  <target name="prepare-external-check" depends="init">
+    <condition property="external.kowari.present">
+       <and>
+          <available file="${lib.repositories}/driver-1.0.3.jar" type="file"/>
+          <available file="${lib.repositories}/trove-1.0.2.jar" type="file"/>
+          <available file="${lib.repositories}/activation-1.0.2.jar" type="file"/>
+          <available file="${lib.repositories}/saaj-1.1.jar" type="file"/>
+          <available file="${lib.repositories}/jrdf-0.2.1.jar" type="file"/>
+       </and>
+    </condition>
+    <available file="${lib.repositories}/sesame.jar" type="file" property="external.sesame.present"/>
+    <available file="${lib.repositories}/pg72jdbc2.jar" type="file" property="external.postgres.present"/>
+    <available file="${lib.repositories}/mysql-connector-java-3.0.11-stable-bin.jar" type="file" property="external.mysql.present"/>
+  </target>
+    
+<!-- === Clean Targets =================================================== -->
+
+  <target name="clean-dataset">  
+   <echo message="Cleaning the ${set} dataset"/>
+   <ant antFile="${data.datasets}/${set}/build.xml" target="clean">
+    <property name="base" value="${data.datasets}/${set}"/>
+    <property name="data.dest" value="${webapp.data}"/>
+    <property name="vocabularies.code" value="${vocabularies.code}"/>
+    <property name="vocabularies.bytecode" value="${vocabularies.bytecode}"/>
+   </ant>
+  </target>
+
+  <target name="clean-datasets" depends="init">
+     <foreach list="${list.datasets}" target="clean-dataset" inheritAll="true" param="set" delimiter=","/>
+  </target>
+
+  <target name="clean-vocabularies" depends="init" description="Clean the vocabularies generated source code and byte code.">
+  	 <delete dir="${vocabularies.code}"/>
+	 <delete dir="${vocabularies.bytecode}"/>
+  </target>
+    
+  <target name="clean-webapp" depends="init" description="Clean the web application to its original state.">
+      <delete dir="${webapp.data}"/>
+      <delete dir="${webapp.lib}"/>
+      <delete dir="${webapp.index}"/>
+      <delete file="${webapp.webinf}/data.properties"/>
+      <delete file="${webapp.webinf}/config.n3"/>
+  </target>
+
+  <target name="clean" depends="init" description="Clean the compiled java code.">
+      <delete dir="${build.dest}"/>
+      <delete dir="${build.tools}"/>
+  </target>
+
+  <target name="clean-code" depends="clean,clean-vocabularies" description="Clean the all java code (app and generated vocabularies)."/>
+
+  <target name="clean-all" depends="clean-datasets,clean,clean-vocabularies,clean-webapp" description="Clean everything to its original state.">
+	  <delete dir="${build}"/>
+  </target>
+	  
+</project>

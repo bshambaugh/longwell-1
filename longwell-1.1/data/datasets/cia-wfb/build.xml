@@ -1,0 +1,46 @@
+<project name="cia-wfb" default="data">
+
+	<!--+
+	    | Contract
+	    |
+	    |      call the "data" target with the following properties set:
+	    |              base is the location of this dataset package relative to the main build.xml file
+	    |              data.dest is where you want your data to end up 
+	    |              
+	    |  assumes all directories already exist
+	    |
+	    +-->
+	
+	<description>
+     Manages the CIA world factbook
+	</description>
+
+	<target name="data">
+      <if>
+      	<not><available file="${base}/data/cia-wfb.zip"/></not>
+        <then>
+         <mkdir dir="${base}/data/"/>        
+		 <get src="http://simile.mit.edu/repository/datasets/cia-wfb/data/cia-wfb.zip" 
+             dest="${base}/data/cia-wfb.zip" 
+             verbose="true"
+             usetimestamp="true"
+	      />
+       	</then>
+      </if>		
+	  <unzip src="${base}/data/cia-wfb.zip" dest="${base}/data/" overwrite="false"/>
+	</target>
+	
+	<target name="copy-data">
+      <copy todir="${data.dest}">
+        <fileset dir="${base}/data">
+          <include name="*.xml"/>
+        </fileset>
+       </copy>
+    </target>
+
+	<target name="clean">
+  	  <delete quiet="true" dir="${base}/data/shared"/>
+  	  <delete quiet="true" dir="${base}/data/countries"/>
+	</target>
+		
+</project>

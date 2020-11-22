@@ -1,0 +1,24 @@
+#header {
+  background: #f0fef0;
+}
+
+#queryform {
+  margin-left: 5em;
+}
+
+.warning {
+  color: #f00;
+}
+
+textarea {
+  padding: 5px;
+  border: 1px solid #ddd;
+  background: #eee;
+  margin: 10px 0;
+}
+
+input {
+  color: #888;
+  border: 1px solid #ddd;
+  -moz-border-radius: 16px;
+}

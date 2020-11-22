@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<project name="webapp">
+
+  <description>
+    Webapp targets
+  </description>
+  
+  <target name="prepare-data" depends="init">
+    <mkdir dir="${webapp.webinf}/data"/>
+    <mkdir dir="${webapp.webinf}/index"/>
+  </target>
+    
+  <target name="data" depends="prepare-data">
+  
+    <if>
+      <not>
+         <isset property="bundle"/>
+      </not>
+      <then>
+         <echo>
+The build process requires you to choose data bundle.
+   
+NOTE: due to copyright restriction the "art-private" bundle is not
+publicly accessible and you will be asked for a password
+if you select it that will be used by the build system to
+fetch the data from the network.
+
+SUGGESTION: if you want this message to go away, you can invoke
+the build script like this "./build.sh -Dbundle=tr" and this
+will set the "bundle" property for you and you won't have to insert
+it every time.
+
+</echo>   
+         <input message="Please enter the data bundle [${list.bundles}]:" addproperty="bundle"/>        
+      </then>
+    </if>
+
+    <property file="${data.bundles}/${bundle}/data.properties"/>
+  
+    <foreach list="${bundle.datasets}" target="merge-dataset" param="set" delimiter="," inheritall="true" inheritrefs="true"/>
+  </target>
+  
+  <target name="dataset" depends="init" description="Builds the dataset data indicated in the 'set' property and put the results in 'webapp.data'">
+   <ant antFile="${data.datasets}/${set}/build.xml" target="data">
+    <property name="base" value="${data.datasets}/${set}"/>
+    <property name="stylesheets" value="${data.stylesheets}"/>
+	<reference refid="classpath"/>
+   </ant>
+  </target>
+
+  <target name="merge-dataset" depends="dataset">
+   <mkdir dir="${webapp.data}/${set}"/>
+   <ant antFile="${data.datasets}/${set}/build.xml" target="copy-data">
+    <property name="base" value="${data.datasets}/${set}"/>
+    <property name="data.dest" value="${webapp.data}/${set}"/>
+   </ant>
+  </target>
+
+  <target name="webapp" depends="start,package,data" description="Builds the web application">
+
+    <!-- copy the longwell code -->
+    <copy file="${build}/vocabularies.jar" tofile="${webapp.lib}/vocabularies.jar"/>
+    <copy file="${build}/${name}.jar" tofile="${webapp.lib}/${name}-${version}.jar"/>
+
+    <!-- copy the required libraries -->
+    <copy todir="${webapp.lib}">
+      <fileset dir="${lib}">
+        <include name="*.jar"/>
+      </fileset>
+      <fileset dir="${lib.repositories}">
+        <include name="*.jar"/>
+      </fileset>
+    </copy>
+
+    <!-- copy the bundle config files -->
+    <copy file="${data.bundles}/${bundle}/data.properties" tofile="${webapp.webinf}/data.properties"/>
+    <copy file="${data.bundles}/${bundle}/conf/config.n3" tofile="${webapp.webinf}/config.n3"/>
+
+    <!-- copy the bundle data -->
+    <copy todir="${webapp.data}" failonerror="false">
+     <fileset dir="${data.bundles}/${bundle}/data">
+       <include name="**/*.rdf"/>
+       <include name="**/*.rdfs"/>
+       <include name="**/*.owl"/>
+       <include name="**/*.n3"/>
+     </fileset>
+    </copy>
+
+    <!-- copy the shared ontologies -->
+    <copy todir="${webapp.data}/ontologies">
+     <fileset dir="${data.ontologies}">
+       <include name="**/*.rdf"/>
+       <include name="**/*.rdfs"/>
+       <include name="**/*.owl"/>
+       <include name="**/*.n3"/>
+       <exclude name="**/owl.owl"/> <!-- FIXME(SM) this is because we have a problem with the Simile Reasoner -->
+     </fileset>
+    </copy>
+
+  </target>
+
+  <target name="war" depends="webapp" description="Builds the web application a WAR archive">
+    <jar jarfile="${webapp.war}" index="true">
+      <fileset dir="${webapp}"/>
+    </jar>
+  </target>
+  
+</project>

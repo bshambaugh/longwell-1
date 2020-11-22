@@ -1,0 +1,44 @@
+#*
+* Knowle template
+*#
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>The SIMILE Project | Knowle</title>
+    <link rel="stylesheet" href="styles/default.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/knowle.css" type="text/css"/>
+    <script type="text/javascript" src="scripts/knowle.js">//</script>
+  </head>
+  
+  <body onload="init()">
+    
+    <div id="header">
+      <div class="right">
+        <form name="prefs">URI labels: <input type="checkbox" name="uriPref" onclick="toggleLabel(this.checked)" /></form>
+      </div>
+      <h1>Knowle</h1>
+      <h2>an RDF navigator</h2>
+    </div>
+    
+    #renderRefs($base $frame)
+
+    #renderProps($base $frame)
+    
+    <div class="rdf">
+      #if ($error)
+        <div class="error">
+          $error
+        </div>
+      #end
+      #renderFrame($base $frame)
+    </div>
+        
+    <div id="footer">
+      <p>The <a href="http://simile.mit.edu/">SIMILE</a> Project</p>
+    </div>
+    
+  </body>
+  
+</html>

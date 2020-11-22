@@ -1,0 +1,40 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix nci:     <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "NCI Oncology Thesaurus Ontology display configuration" ;
+    dc:creator      "Ryan Lee" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-11-08" ;
+    dc:format       "RDF" .
+
+# Display parts
+:nci a disp:BrowserConfiguration .
+
+:nci disp:displayClasses (
+  owl:Class
+  owl:ObjectProperty
+  owl:AnnotationProperty
+) .
+
+:nci disp:displayFacets (
+  rdf:type
+  rdfs:subClassOf
+  rdfs:domain
+  rdfs:range
+) .
+
+:nci disp:displayProperties (
+  rdfs:label
+  nci:code
+  nci:id
+  nci:DEFINITION
+  nci:Synonym
+  nci:UMLS_CUI
+  nci:Semantic_Type
+) .

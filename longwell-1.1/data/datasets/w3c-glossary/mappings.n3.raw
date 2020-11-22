@@ -1,0 +1,1180 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix disp: <http://simile.mit.edu/2004/02/ontologies/display#> .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#match>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#match> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#match> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#match> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#match> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#dTD>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#dTD> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#dTD> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#parent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#parent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#parent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#parent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#parent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#userAgent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#userAgent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#userAgent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#rDFResource>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#webResource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#webResource> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#user>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#user> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#user> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#cDATASections>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#cDATASections> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#cDATASections> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#name>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#name> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#name> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#name> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#name> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#may>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#may> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#may> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#may> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#may> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#resource>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#resource> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#resource> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-3-Events#mouseover>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-3-Events#mousemove> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-3-Events#mousemove> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#audioDescription>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#auditoryDescription> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#auditoryDescription> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#restriction,Local>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#restriction,Global> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#restriction,Global> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#xMLDocument>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLDocument> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLDocument> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#web>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#web> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#web> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#well-formednessConstraint>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#well-formednessConstraint> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#well-formednessConstraint> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#atUserOption>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#atUserOption> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#atUserOption> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#document>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#document> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#document> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#document> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#document> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#document> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#document> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#attribute>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#attribute> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#attribute> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#contentNegotiation>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#contentNegotiation> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#contentNegotiation> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#contentNegotiation> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#contentNegotiation> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#profile>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#profile> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#profile> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#profile> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#profile> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#validityConstraint>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#validityConstraint> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#validityConstraint> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#statement>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#statement> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#statement> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#statement> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#statement> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#characterOrExpressionDepth>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#characterOrExpressionWidth> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#characterOrExpressionWidth> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#sibling>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#sibling> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#sibling> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#sibling> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#sibling> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#entity>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#entity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#entity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#entity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#entity> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#documentType>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#documentTree> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#documentTree> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#elementTypeDeclaration>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elementTypeDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elementTypeDeclaration> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#mixedContent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#mixedContent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#mixedContent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#uRIReference>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#iRIReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#iRIReference> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#characterData>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#characterData> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#characterData> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#captions>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#captions> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#captions> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#character>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/charreq#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#character> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/charreq#character> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#arc>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#arc> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#arc> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#documentEntity>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#documentEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#documentEntity> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#contentModel>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#contentModel> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#contextNode> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#contentModel> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#contextNode> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#replace>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#replace> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#replace> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#consistent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#inconsistent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#inconsistent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#must>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#must> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#must> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#must> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#must> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#must> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#must> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#priority3P3>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#priority2P2> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#priority1P1> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#priority1P1> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#priority2P2> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xptr-framework#scheme>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#schema> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#schema> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#child>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#child> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#child> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#child> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#child> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#gateway>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#gateway> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#gateway> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#gateway> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#gateway> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#error>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xptr-framework#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-3-Events#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xptr-framework#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#error> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-3-Events#error> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPSender>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPHeader> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPHeader> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#publicIdentifier>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#publicIdentifier> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#publicIdentifier> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#originServer>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#originServer> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#originServer> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#originServer> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#originServer> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#unnamedClass>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#namedClass> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#namedClass> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#preference>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#preference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#preference> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#defaultNamespace>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#defaultNamespace> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#defaultNamespace> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInAttributeValue>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInAttributeValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInAttributeValue> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#text>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#text> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#text> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#text> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#text> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#vocabulary>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#vocabulary> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#vocabulary> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#cacheable>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#cacheable> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#cacheable> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#link>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#link> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#link> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#link> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#link> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#link> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#link> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGFour-byteUnsignedInteger>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGFour-byteSignedInteger> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGFour-byteSignedInteger> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#namespaceName>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#namespaceName> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#namespaceName> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xptr-framework#pointer>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#pointer> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#pointer> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#identical>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#identical> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#identical> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#expandedName>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#expanded-name> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#expanded-name> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#element>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#elements> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elements> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elements> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#elements> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#element> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#element> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInContent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInContent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInContent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#cache>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#cache> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#cache> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/qa-glossary#well-formed>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#well-formed> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#well-formed> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#proxy>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#proxy> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#proxy> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#proxy> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#proxy> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#request>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#request> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#request> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#request> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#request> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attributeName>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attributeName> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attributeValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attributeValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attributeName> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attributeValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attributeValue> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#applet>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#applet> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#applet> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#unparsedEntity>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#unparsedEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parsedEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parsedEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#unparsedEntity> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#content>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#content> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#content> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#content> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#content> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#content> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#content> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#internalEntity>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#externalEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#externalEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#internalEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#internalEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#externalEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#externalEntity> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#fatalError>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#fatalError> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#fatalError> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#image>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#image> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#image> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#markupDeclaration>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#markupDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#markupDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#markupDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#markupDeclaration> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#server>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#server> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#server> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#server> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#server> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#server> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#server> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xmlschema-2#forCompatibility>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#forCompatibility> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#forCompatibility> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#forCompatibility> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#forCompatibility> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attribute-listDeclarations>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attribute-listDeclarations> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attribute-listDeclarations> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#documentOrder>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#documentOrder> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#documentModel> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#documentOrder> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#documentModel> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#elementType>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#elementName> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#elementName> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#inputModalities>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#outputModalities> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#outputModalities> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#device-independence>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#deviceIndependent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#deviceIndependent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#dataElement>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#catchElement> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#catchElement> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#declared>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#declared> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#declared> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#node>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#node> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#node> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#node> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#node> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#node> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#node> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-test#testAssertion>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qa-glossary#testAssertion> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#testAssertion> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qa-glossary#testAssertion> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#testAssertion> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#rDFResourceDescriptionFramework>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/charreq#rDFResourceDescriptionFramework> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/charreq#rDFResourceDescriptionFramework> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#valid>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#valid> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#valid> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#valid> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#valid> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#script>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#script> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#script> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#extensional>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#intensional> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#intensional> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#namespacePrefix>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#namespacePrefix> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#namespacePrefix> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#generalEntities>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#generalEntities> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#generalEntities> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#assistiveTechnology>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#assistiveTechnology> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#assistiveTechnology> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#descendant>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#descendant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#descendant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#descendants> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#descendant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#descendant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xpath#descendants> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#authoringTool>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#authoringTool> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#authoringTool> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#object>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#object> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#object> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#validation>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#validator> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#validator> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#localPart>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#localPart> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#localPart> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGDecoder>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGEncoder> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/PNG#pNGEncoder> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#forInteroperability>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#forInteroperability> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#forInteroperability> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#ancestor>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#ancestor> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#ancestor> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#ancestor> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#ancestor> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#empty-elementTag>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#empty-elementTag> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#empty-elementTag> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#discretionaryChoices>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-test#discretionaryChoices> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-test#discretionaryChoices> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#property>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#property> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-syntax#property> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xptr-framework#application>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#application> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#application> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#application> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#application> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#application> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#application> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#navigation>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#navigation> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#navigation> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#externalMarkupDeclaration>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#externalMarkupDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#externalMarkupDeclaration> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#default>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#default> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#default> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#variant>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#variant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#variant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#variant> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#variant> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#replacementText>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#replacementText> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#replacementText> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#informativeText>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#normativeText> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#normativeText> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#author>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#author> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#author> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#render>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#sender> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#reader> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#reader> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#sender> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#comments>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#comments> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#comments> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#process>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#process> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#process> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/P3P#uRI>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#uRI> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/voicexml20#uRI> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#notations>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#notations> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#notations> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#browser>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#browser> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#browser> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#browser> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#browser> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#rendering>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#rendering> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml1#rendering> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#documentTypeDeclaration>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#documentTypeDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#documentTypeDeclaration> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#conditionalSections>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#conditionalSections> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#conditionalSections> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPRole>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPNode> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/soap12-part1#sOAPNode> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#equivalent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#equivalent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#equivalent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#elementContent>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elementContent> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#elementContent> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#prompt>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#prompt> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#prompt> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Traversal-Range#tokenized>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#tokenized> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-HTML#tokenized> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-HTML#tokenized> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#tokenized> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#literalEntityValue>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#literalEntityValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#literalEntityValue> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#client>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CCPP-struct-vocab#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#client> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#client> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parameter-entityReferences>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#parameter-entityReferences> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#parameter-entityReferences> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#notationDeclarations>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#notationDeclarations> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#notationDeclarations> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#xMLProcessor>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLProcessor> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLProcessor> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#hypertext>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#hypertext> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#hypertext> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#naturalLanguage>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#naturalLanguage> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#naturalLanguage> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInDTD>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInDTD> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInDTD> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/ATAG10#alert>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#alert> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/UAAG10#alert> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#enumeratedAttributes>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#enumeratedAttributes> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#enumeratedAttributes> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#markup>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#markup> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#markup> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#deprecated>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#deprecated> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#deprecated> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#end-tag>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#end-tag> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#end-tag> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/di-gloss#response>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#response> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rfc2616#response> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/weaving#styleSheet>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#styleSheet> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#styleSheets> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/WAI-WEBCONTENT#styleSheets> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/CSS2#styleSheet> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#class>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#class> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/rdf-mt#class> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#entityReference>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#entityReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#entityReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#entityReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#entityReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#entityReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#entityReference> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#start-tag>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#start-tag> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#start-tag> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/MathML2#documentTypeDefinitionDTD>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#documentTypeDefinitionDTD> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#documentTypeDefinitionDTD> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#characterReference>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#characterReference> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#characterReference> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#extendedLinks>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#extendedLink> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#extendedLink> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#validatingProcessors>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#validatingProcessors> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#validatingProcessors> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xforms#datatype>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#datatype> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/owl-guide#datatype> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#module>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#module> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/qaframe-spec#module> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#xMLDeclaration>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLDeclaration> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#xMLDeclaration> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#attributeSpecifications>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attributeSpecifications> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#attributeSpecifications> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#qualifiedName>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#qualifiedNames> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#qualifiedNames> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#parameterEntities>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#parameterEntity> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xhtml-modularization#parameterEntity> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml-names11#xMLNamespace>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#xMLNamespace> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml-names#xMLNamespace> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-Events#dOMLevel0>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-HTML#dOMLevel0> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/DOM-Level-2-HTML#dOMLevel0> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#escape>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#escape> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#escape> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#included>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#included> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#included> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#simpleLinks>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#simpleLink> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xlink#simpleLink> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/w3c-jargon#host>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#host> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/hypertext-terms#host> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#processingInstructions>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#processingInstructions> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#processingInstructions> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#empty>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#empty> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#empty> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#systemIdentifier>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#systemIdentifier> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#systemIdentifier> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#referenceInEntityValue>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInEntityValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#referenceInEntityValue> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#occursAsAttributeValue>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#occursAsAttributeValue> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#occursAsAttributeValue> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/REC-xml#root>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#root> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/xml11#root> ;
+  .
+
+<http://www.w3.org/2003/03/glossary-project/data/glossaries/ruby#complexRubyMarkup>
+  rdf:type disp:PreferredTerm ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ruby#simpleRubyMarkup> ;
+  owl:sameAs <http://www.w3.org/2003/03/glossary-project/data/glossaries/ruby#simpleRubyMarkup> ;
+  .
+

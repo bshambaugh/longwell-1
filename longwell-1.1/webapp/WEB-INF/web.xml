@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"
+    "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+<web-app>
+    <context-param>
+        <param-name>properties</param-name>
+        <param-value>/WEB-INF/data.properties</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>templates</param-name>
+        <param-value>/WEB-INF/templates</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>useJenaInferencer</param-name>
+        <param-value>no</param-value>
+        <!-- <param-value>yes</param-value> -->
+    </context-param>
+
+    <servlet>
+        <servlet-name>Longwell</servlet-name>
+        <servlet-class>edu.mit.simile.longwell.Longwell</servlet-class>
+        <init-param>
+            <param-name>index</param-name>
+            <param-value>/WEB-INF/index</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Knowle</servlet-name>
+        <servlet-class>edu.mit.simile.knowle.Knowle</servlet-class>
+        <init-param>
+            <param-name>loadOntologies</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <init-param>
+            <param-name>customOntDocManagerPath</param-name>
+            <param-value>false</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>Patchway</servlet-name>
+        <servlet-class>edu.mit.simile.patchway.Patchway</servlet-class>
+        <load-on-startup>1</load-on-startup>    
+    </servlet>
+
+    <servlet>
+        <servlet-name>Downend</servlet-name>
+        <servlet-class>edu.mit.simile.downend.Downend</servlet-class>
+        <load-on-startup>1</load-on-startup>    
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Longwell</servlet-name>
+        <url-pattern>/longwell</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Knowle</servlet-name>
+        <url-pattern>/knowle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    		<servlet-name>Patchway</servlet-name>
+    		<url-pattern>/patchway</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+    		<servlet-name>Downend</servlet-name>
+    		<url-pattern>/downend</url-pattern>
+    </servlet-mapping>
+</web-app>

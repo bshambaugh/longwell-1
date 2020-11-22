@@ -1,0 +1,63 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix org:     <http://www.w3.org/2001/04/roadmap/org#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix trp:     <http://www.w3.org/2001/02pd/rec54#> .
+@prefix doc:     <http://www.w3.org/2000/10/swap/pim/doc#> .
+@prefix matrix:  <http://www.w3.org/2002/05/matrix/vocab#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix pub:     <http://simile.mit.edu/2004/05/year#> .
+@prefix glossary: <http://simile.mit.edu/2004/04/ontologies/glossary#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "SIMILE browser display configuration" ;
+    dc:creator      "Ryan Lee" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-02-17" ;
+    dc:format       "RDF" .
+
+# Display parts
+:Simile a disp:BrowserConfiguration .
+
+:Simile disp:displayProperties (
+ dc:title
+ dc:date
+ trp:implementationFeedbackDue
+ doc:versionOf
+ trp:cites
+ matrix:hasErrata
+ matrix:hasTranslations
+ doc:obsoletes
+) .
+
+:Simile disp:displayFacets (
+ rdf:type
+ pub:year
+ org:deliveredBy
+ glossary:defines
+) .
+
+:Simile disp:displayClasses (
+ doc:Work
+) .
+
+:Simile disp:propertyObjectDisplay (
+ dc:title
+ rdfs:seeAlso
+ trp:cites
+ doc:versionOf
+ matrix:hasErrata
+ matrix:hasTranslations
+ doc:obsoletes
+) .
+
+# Display as a hyperlink
+dc:title a disp:SelfValueLink .
+rdfs:seeAlso a disp:Link .
+matrix:hasErrata a disp:Link .
+matrix:hasTranslations a disp:Link .
+trp:cites a disp:URI .
+doc:obsoletes a disp:Link .
+doc:versionOf a disp:Link .

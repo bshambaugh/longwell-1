@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<project name="compile">
+
+  <description>
+    Compilation Targets
+  </description>
+
+  <target name="compile-vocabularies" depends="prepare-vocabularies">
+     <mkdir dir="${vocabularies.code}/${vocabularies.package.path}"/>
+      <if>
+        <and>
+          <uptodate targetfile="${vocabularies.code}/${vocabularies.package.path}/Display.java" srcfile="${data.ontologies}/unofficial/display.rdfs.n3"/>
+          <uptodate targetfile="${vocabularies.code}/${vocabularies.package.path}/Artstor.java" srcfile="${data.ontologies}/unofficial/artstor.rdfs.n3"/>
+          <uptodate targetfile="${vocabularies.code}/${vocabularies.package.path}/VRACore.java" srcfile="${data.ontologies}/unofficial/vraCore3.rdfs.n3"/>
+          <uptodate targetfile="${vocabularies.code}/${vocabularies.package.path}/Person.java"  srcfile="${data.ontologies}/unofficial/person.rdfs.n3"/>
+          <uptodate targetfile="${vocabularies.code}/${vocabularies.package.path}/SkosCore.java" srcfile="${data.ontologies}/official/skos.owl"/>
+        </and>
+        <then>
+          <echo message="Ontologies are up-to-date"/>
+        </then>
+        <else>
+          <echo message="Generating SkosCore.java"/>
+          <java classname="jena.schemagen" classpathref="classpath">
+            <arg line="-i ${data.ontologies}/official/skos.owl -a http://www.w3.org/2004/02/skos/core# --package ${vocabularies.package} -o ${vocabularies.code}/${vocabularies.package.path}/SkosCore.java -n SkosCore"/>
+          </java>
+          <echo message="Generating Display.java"/>
+          <java classname="jena.schemagen" classpathref="classpath">
+            <arg line="-i ${data.ontologies}/unofficial/display.rdfs.n3 -e N3 -a http://simile.mit.edu/2004/02/ontologies/display# --package ${vocabularies.package} -o ${vocabularies.code}/${vocabularies.package.path}/Display.java -n Display"/>
+          </java>
+          <echo message="Generating Artstor.java"/>
+          <java classname="jena.schemagen" classpathref="classpath">
+            <arg line="-i ${data.ontologies}/unofficial/artstor.rdfs.n3 -e N3 -a http://simile.mit.edu/2003/10/ontologies/artstor# --package ${vocabularies.package} -o ${vocabularies.code}/${vocabularies.package.path}/Artstor.java -n Artstor"/>
+          </java>
+          <echo message="Generating VRACore.java"/>
+          <java classname="jena.schemagen" classpathref="classpath">
+            <arg line="-i ${data.ontologies}/unofficial/vraCore3.rdfs.n3 -e N3 -a http://simile.mit.edu/2003/10/ontologies/vraCore3# --package ${vocabularies.package} -o ${vocabularies.code}/${vocabularies.package.path}/VRACore.java -n VRACore"/>
+          </java>
+          <echo message="Generating Person.java"/>
+          <java classname="jena.schemagen" classpathref="classpath">
+            <arg line="-i ${data.ontologies}/unofficial/person.rdfs.n3 -e N3 -a http://simile.mit.edu/2003/10/ontologies/person# --package ${vocabularies.package} -o ${vocabularies.code}/${vocabularies.package.path}/Person.java -n Person"/>
+          </java>
+          <javac srcdir="${vocabularies.code}/${vocabularies.package.path}" destdir="${vocabularies.bytecode}" classpathref="classpath"/>
+        </else>
+      </if>
+  </target>
+  
+  <target name="compile-tools" depends="prepare-tools,compile-vocabularies">
+
+    <javac srcdir="${src.java}"
+           destdir="${build.tools}"
+           debug="${compiler.debug}"
+           optimize="${compiler.optimize}"
+           deprecation="${compiler.deprecation}"
+           target="${target.vm}"
+           nowarn="${compiler.nowarn}"
+           compiler="${compiler}"
+           classpathref="classpath"
+           classpath="${vocabularies.dest}">
+       <include name="edu/mit/simile/tools/**"/>
+    </javac>
+  </target>
+
+  <target name="compile" depends="prepare,prepare-external-check,compile-vocabularies">
+    <javac sourcepath="" srcdir="${src.java}"
+           destdir="${build.dest}"
+           debug="${compiler.debug}"
+           optimize="${compiler.optimize}"
+           deprecation="${compiler.deprecation}"
+           target="${target.vm}"
+           nowarn="${compiler.nowarn}"
+           compiler="${compiler}"
+           classpathref="classpath"
+           classpath="${vocabularies.dest}">
+	<include name="**/*.java"/>
+	<exclude name="edu/mit/simile/tools/**"/>
+	<exclude name="edu/mit/simile/longwell/model/kowari/*.java"
+                 unless="external.kowari.present"/>
+	<exclude name="edu/mit/simile/longwell/model/sesame/*.java"
+                 unless="external.sesame.present"/>
+    </javac>
+          
+  </target>
+    
+<!-- === Package Targets ================================================= -->
+
+  <target name="package" depends="compile,compile-tools">
+    <jar jarfile="${build}/vocabularies.jar" index="true">
+      <fileset dir="${vocabularies.bytecode}"/>
+    </jar>
+    <jar jarfile="${build}/${name}.jar" index="true">
+      <fileset dir="${build.dest}"/>
+    </jar>
+    <jar jarfile="${build}/${name}-tools.jar" index="true">
+      <fileset dir="${build.tools}"/>
+    </jar>
+  </target>
+
+</project>

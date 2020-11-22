@@ -1,0 +1,320 @@
+#*
+ * Longwell Template
+ *#
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+ <head>
+  <title>The SIMILE Project | Longwell</title>
+  <link rel="stylesheet" href="styles/default.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/longwell.css" type="text/css"/>
+  <link rel="stylesheet" href="styles/metadata.css" type="text/css"/>
+  <script src="scripts/longwell.js" type="text/javascript">//</script>
+ </head>
+
+  <body onload="init()">
+
+   <div id="sidebar">
+                      
+    <div id="restrictions">
+      <div class="top">       
+       #if ($restrictions.size() == 0) 
+        <span class="title">No Restriction</span>
+       #elseif ($restrictions.size() == 1) 
+        <span class="title">Restriction</span> 
+       #elseif ($restrictions.size() > 1)
+        <span class="title">$restrictions.size() Restrictions</span><span class="control">(<a href="$base">remove all</a>)</span>
+       #end
+      </div>
+      #if ($restrictions.size() > 0)
+       <div class="middle">
+         #foreach($restriction in $restrictions)
+           <div class="restriction">
+            <span class="facet">$restriction.FacetLabel</span>: <span class="value">$restriction.ValueLabel</span><span class="control">(<a href="$base?$restriction.getRemove()">remove</a>)</span>
+           </div>
+         #end
+       </div>
+       <div class="bottom">
+         #if ($num_results > 1) 
+          limit to <span class="results">$num_results</span> results
+         #elseif ($num_results == 1) 
+          limits to a <span class="results">unique</span> result
+         #else
+          produces <span class="results">no results</span>
+         #end 
+       </div>
+      #else
+       <div class="middle">
+        <div class="info">Click on the facets below to add restrictions</div>
+       </div>
+      #end 
+    </div>
+
+    #if ($allowadd.equals("true"))
+    <div id="additions">
+      <div class="title">add data by <acronym title="Uniform Resource Location (starts with http:// or file:///, etc)">URL</acronym></div>
+      #if ($addmsg)
+        <div class="error">$addmsg</div>
+      #end
+      <form action="$base" method="GET">
+        <input type="text" name="add" class="uribox" />
+        <input type="submit" value="add" />
+      </form>
+    </div>
+    #end
+
+      #if ($langs.size() > 2)
+        <div id="langselect">
+           <div class="title">language select</div>
+           <form action="$base" method="GET">
+           <select name="lang">
+             #foreach($langopt in $langs.keySet())
+               #if($langopt.equals($lang))
+                 <option value="$langopt" selected="selected">$langs.get($langopt)</option>
+               #else
+                 <option value="$langopt">$langs.get($langopt)</option>
+               #end
+             #end
+           </select>
+           <input type="submit" name="lang-submit" value="select" />
+           #foreach($restriction in $restrictions)
+             <input type="hidden" name="$restriction.FacetURI" value="$restriction.ValueURI"/>
+           #end
+           </form>
+        </div>
+      #end
+
+    #if ($browser_values.size() > 0)       
+
+    <div id="browsers">
+      <form action="$base" method="GET">
+      <div id="freetextsearch">
+        <div class="title">free text search</div>
+          <input class="searchbox" type="text" size="20" name="freetextsearch"/>
+          <input type="submit" name="submit" value="search"/>
+          #if ($restrictions.size() > 0)
+           #foreach($restriction in $restrictions)
+            <input type="hidden" name="$restriction.FacetURI" value="$restriction.ValueURI"/>
+           #end
+         #end
+      </div>
+      </form>
+
+      <div id="facetsearch">
+        <div class="title">facet search</div>
+        <input name="facet-search" id="facet-search" class="searchbox" type="text" size="15"/>
+	<input type="submit" name="facet-submit" value="search" onclick="restrict('facet-search','facet')"/>
+        <input type="reset" name="facet-reset" value="reset" onclick="resetSearch('facet-search','facet')"/>
+      </div>
+
+      <form action="$base" method="GET" id="order.form">
+      <div id="sorting">
+        #if ($order == "alphabetic")
+         <div class="inputs"><span>sort alphabetically</span> | <a href="" onclick="setOrder('frequency'); return false">sort by frequency</a></div>
+        #else
+         <div class="inputs"><a href="" onclick="setOrder('alphabetic'); return false">sort alphabetically</a> | <span>sort by frequency</span></div>
+        #end
+          <input type="hidden" name="sort" id="order"/>
+          #if ($restrictions.size() > 0)
+           #foreach($restriction in $restrictions)
+            <input type="hidden" name="$restriction.FacetURI" value="$restriction.ValueURI"/>
+           #end
+          #end
+      </div>
+      </form>
+
+      #foreach($browser in $browser_values)
+        #if ($browser.size > 0)
+         <div class="browser">
+          <div class="title trigger" onclick="toggle('$browser.property.label')"><table><tr><td width="100%">$browser.property.label</td><td><img src="images/box_open.gif" id="trigger:$browser.property.label" alt="" /></td></tr></table></div>
+          <div id="block:$browser.property.label" name="block"
+           #if ($browser.size > 15)
+             class="scrollable"
+           #else
+             class="box"
+           #end
+          >
+          #foreach($facet_value in $browser.values)
+            #if ($facet_value.HasNarrowerTerms)
+              #if ($facet_value.NumberNarrowerTerms > 1)
+               <div class="multiple">
+                <div>
+                 <img class="trigger" src="images/tree_closed.gif" onclick="toggle('$facet_value.BroaderTerm.Resource')" id="trigger:$facet_value.BroaderTerm.Resource" alt="" />
+                 <a name="facet" href="$base?$query_string&amp;$browser.property.EncodedURI=$facet_value.BroaderTerm.EncodedURI">$facet_value.BroaderTerm.label ($facet_value.Frequency)</a>
+                </div>
+                <div class="branch" id="block:$facet_value.BroaderTerm.Resource" name="block" style="display: none">
+                 #foreach($child in $facet_value.NarrowerTerms)
+                  <div class="item"><a name="facet" href="$base?$query_string&amp;$browser.property.EncodedURI=$child.EncodedURI">$child.label ($child.frequency)</a></div>
+                 #end
+                </div>
+               </div>
+              #else
+                #foreach($child in $facet_value.NarrowerTerms)
+                  <div class="item"><a name="facet" href="$base?$query_string&amp;$browser.property.EncodedURI=$child.EncodedURI">$child.label ($child.frequency)</a></div>
+                #end
+              #end
+            #else
+             <div class="item">
+              #if ($facet_value.BroaderTerm.IsEquivalent)
+               <a href="$base?$query_string&amp;$browser.property.EncodedURI=$facet_value.BroaderTerm.EncodedURI" name="facet" class="equivalent">
+                 $facet_value.BroaderTerm.label ($facet_value.BroaderTerm.frequency)
+               </a>
+              #else
+               <a name="facet" href="$base?$query_string&amp;$browser.property.EncodedURI=$facet_value.BroaderTerm.EncodedURI">
+                $facet_value.BroaderTerm.label ($facet_value.BroaderTerm.frequency)
+               </a>
+              #end
+             </div>
+            #end
+          #end
+          </div>
+        </div>
+        #end
+      #end
+    </div>
+    #end
+    
+   </div>
+
+    <div id="header">    
+     <h1>Longwell</h1>
+     <h2>metadata browser</h2>
+    </div>
+        
+    #if ($restrictions.size() > 0)
+    
+       #if ($next || $previous)
+         #nextAndPreviousLinks()
+       #end
+
+      <div id="results">
+      
+      #foreach ($fullResult in $results)
+        #set($result = $fullResult.Properties)
+        <table class="result">
+        
+        <tr>
+        #set($thumbnail = "blank")
+        #foreach($field in $browser_config_fields)
+          #if ($result.get($field.Resource))
+            #if ($field.isTypedDisplay)
+              #if ($field.displayType.equals($DisplayGetImage.URI))
+                #foreach ($value in $result.get($field.Resource).Values)
+                  #set ($thumbnail = $value.label)
+                #end
+              #end
+            #end
+          #end
+        #end
+        
+        #if (!$thumbnail.equals("blank"))
+          <td class="thumbnail" align="center" valign="center"><img src="$thumbnail" alt="[thumbnail]" /></td>
+        #end
+
+        <td class="properties" valign="top">
+        <div class="metadata"><a href="$knowle?resource=$fullResult.Self.EncodedURI" title="Knowle"><img src="images/browse.gif" width="22" height="24" alt="Knowle" border="0"/></a></div>
+        #foreach($field in $browser_config_fields)
+          #if ($result.get($field.Resource) && $field.isTypedDisplay && !$field.displayType.equals($DisplayGetImage.URI))
+            <div class="property $field.label">
+              <span class="label">$field.label:</span>
+              #set($fieldvalues = $result.get($field.Resource).Values)
+              #foreach ($value in $fieldvalues)
+                #if ($field.displayType.equals($DisplayURI.URI))
+                  <a href="$base?$any=$value.EncodedURI">$value.Resource</a>
+                #elseif ($field.displayType.equals($DisplaySelfValueLink.URI))
+                  <a href="$fullResult.Self.Resource">$value.label</a>
+                #elseif ($field.displayType.equals($DisplayLink.URI))
+                  <a href="$value.Resource">$value.label</a>
+                #elseif ($field.displayType.equals($DisplayOptionalIcon.URI))
+                  #set ($image_resource = $options.getOptions($field.Resource).getResourceImage($value.Resource))
+                  #if ($image_resource)
+                    #if($image_resource.hasTitle)
+                      <img src="$image_resource.location" width="$image_resource.width" height="$image_resource.height" alt="$field.label: $image_resource.title" />
+                    #else
+                      <img src="$image_resource.location" width="$image_resource.width" height="$image_resource.height" alt="$field.label: $value.label" />
+                    #end
+                  #elseif (!$value.isLiteral)
+                    #set ($any = "any")
+                    <a href="$base?$any=$value.EncodedURI">$value.label</a>
+                   #else
+                     $value.label
+                  #end
+                #elseif (!$value.isLiteral)
+                  #set ($any = "any")
+                  <a href="$base?$any=$value.EncodedURI">$value.label</a>
+                #else
+                  $value.label
+                #end
+                #if ($velocityCount != $fieldvalues.size())
+                  |
+                #end
+              #end
+            </div>
+          #end
+          #if ($result.get($field.Resource) && !$field.isTypedDisplay)
+            <div class="property $field.label">
+              <span class="label">$field.label:</span>
+              #set($fieldvalues = $result.get($field.Resource).Values)
+              #foreach ($value in $fieldvalues)
+                #if (!$value.isLiteral)
+                  #set ($any = "any")
+                  <a href="$base?$any=$value.EncodedURI">$value.label</a>
+                #else
+                  $value.label
+                #end
+                #if ($velocityCount != $fieldvalues.size())
+                  |
+                #end
+              #end
+            </div>
+          #end
+        #end
+        </td>
+        </tr>
+        
+        #if ($fullResult.Inbound)
+          #set($inbound = $fullResult.Inbound)
+          #if ($inbound.size() > 0)
+           <tr>
+            <td colspan="2" class="inbound">
+              <div class="trigger" onclick="toggle('$result')"><img src="images/list_closed.gif" id="trigger:$result" alt="" /><span>Referring resources:</span></div>
+                <div id="block:$result" name="block" style="display: none">
+                 <ul>
+                  #foreach ($link in $inbound)
+                    #set ($focus = "focus")
+                    <li><a href="$base?$focus=$link.get(0).EncodedURI">$link.get(0).label</a> <span class="label">$link.get(1).label</span> <em>this</em></li>
+                  #end
+                 </ul>
+              </div>
+            </td>
+           </tr>
+          #end
+        #end
+        
+        </table>
+      #end
+      </div>
+      
+      #if ($next || $previous)
+        #nextAndPreviousLinks()
+      #end
+            
+    #else
+
+      <div id="info">
+       <p>Welcome to Longwell</p>
+      </div>
+      
+    #end
+        
+    <div id="footer">
+     <p>The <a href="http://simile.mit.edu/">SIMILE</a> Project</p>
+    </div>
+
+  </body>
+
+</html>
+
+

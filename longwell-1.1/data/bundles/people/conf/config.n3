@@ -1,0 +1,53 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "SIMILE browser display configuration" ;
+    dc:creator      "Ryan Lee" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-02-17" ;
+    dc:format       "RDF" .
+
+# Display parts
+:Foaf a disp:BrowserConfiguration .
+
+:Foaf disp:displayProperties (
+ foaf:name
+ foaf:nick
+ foaf:mbox
+ foaf:depiction
+ rdfs:seeAlso
+ foaf:homepage
+ dc:thumbnail
+ dc:description
+ foaf:plan
+) .
+
+:Foaf disp:displayFacets (
+ rdf:type
+ foaf:knows
+) .
+
+:Foaf disp:displayClasses (
+ foaf:Person
+ foaf:Image
+) .
+
+:Foaf disp:propertyObjectDisplay (
+ rdfs:seeAlso
+ foaf:depiction
+ foaf:mbox
+ foaf:homepage
+ dc:thumbnail
+) .
+
+# Display as a hyperlink
+rdfs:seeAlso a disp:Link .
+foaf:depiction a disp:GetImage .
+foaf:mbox a disp:Link .
+foaf:homepage a disp:Link .
+dc:thumbnail a disp:GetImage .

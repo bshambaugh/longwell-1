@@ -1,0 +1,50 @@
+#!/usr/bin/perl -w
+
+use strict;
+use LWP::UserAgent;
+
+my $base   = "http://sourceforge.net/softwaremap/";
+
+# start variants; first does UI-oriented, second does topic-oriented
+my $start  = $base . "trove_list.php?form_cat=225";
+# my $start = $base . "trove_list.php";
+
+my $out = "sourceforge.n3";
+my $output = "\@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n";
+$output   .= "\@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n\n";
+
+open(OUT, ">$out") || die "can't open\n";
+print OUT $output;
+
+# Create a user agent object
+my $ua = LWP::UserAgent->new;
+$ua->agent("SourceforgeTopics");
+
+handlePage($start);
+
+sub toN3 {
+    my $list = shift;
+    my $parent = shift;
+    my $out  = "";
+    while($list =~ m|<a href="([^"]*)"><IMG[^>]*>&nbsp; ([^<]*)</a>|gi) {
+	$out .= "<" . $base . $1 . "> rdfs:label \"" . $2 . "\"\@en^^xsd:string .\n";
+        $out .= "<" . $base . $1 . "> rdfs:subClassOf <" . $parent . "> .\n";
+        sleep(2);
+        $out .= &handlePage($base . $1);
+    }
+    return $out;
+}
+
+sub handlePage {
+    my $url = shift;
+    my $req = HTTP::Request->new(GET => $url);
+    my $res = $ua->request($req);
+    if ($res->is_success) {
+	my $html = $res->content;
+	$html =~ m|<!-- begin center column -->(.*?)Browse by|si;
+	print OUT toN3($1, $url);
+    }
+    return ""
+}
+
+close(OUT) || die "can't close\n";

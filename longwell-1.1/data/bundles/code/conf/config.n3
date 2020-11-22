@@ -1,0 +1,35 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix java:    <http://simile.mit.edu/2004/09/ontologies/java#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "Configuration for SIMILE browser display" ;
+    dc:creator      "Stefano Mazzocchi" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-09-30" ;
+    dc:format       "RDF" .
+
+# Display parts
+:Simile a disp:BrowserConfiguration .
+
+:Simile disp:displayProperties (
+ dc:title
+) .
+
+:Simile disp:displayFacets (
+ rdf:type
+ java:contained
+ java:uses
+ java:located
+) .
+
+:Simile disp:displayClasses (
+ java:Package
+ java:Class
+ java:Abstract_Class
+ java:Interface
+) .

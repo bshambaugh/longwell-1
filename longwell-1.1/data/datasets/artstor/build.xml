@@ -1,0 +1,99 @@
+<project name="artstor" default="data">
+
+	<!--+
+	    | Contract
+	    |
+	    |      call the "data" target with the following properties set:
+	    |              base is the location of this dataset package relative to the main build.xml file
+	    |              stylesheets is where the common stylesheets are located
+	    |              classpath is a href for a classpath that contains Saxon
+	    |
+	    |  assumes all directories already exist
+	    |
+	    |  TODO(SM): should we have different dataset "flavors"? for example "demo" or "full"?
+	    |
+	    +-->
+	
+	<description>
+      Manages the ARTstor metadata
+	</description>
+
+	<property name="models" value="artstor"/>
+	<property name="data.flavor" value="-demo"/>
+	
+	<!--property name="models" value="ucsdaa,ucsdab,ucsdac,ucsdad,ucsdae,ucsdaf,ucsdag,ucsdah,ucsdai,ucsdaj,ucsdak,ucsdal,ucsdam,ucsdan,ucsdao,ucsdap,ucsdaq,ucsdar,ucsdas,ucsdat,ucsdau,ucsdav,ucsdaw,ucsdax,ucsday,ucsdaz,ucsdba,ucsdbb,ucsdbc,ucsdbd,ucsdbe,ucsdbf,ucsdbg,ucsdbh"/-->
+	<!--property name="data.flavor" value=""/-->
+			
+	<target name="prepare">
+      <if>
+      	<and>
+          <not><isset property="password"/></not>
+      	  <not><available file="${base}/data/artstor-xml${data.flavor}.zip"/></not>
+      	</and>
+        <then>
+          <echo>
+NOTE: due to copyright restriction the "art" bundle is not
+publicly accessible, so the build system need a password to 
+fetch this information from the SIMILE repository.
+
+SUGGESTION: if you want this message to go away, you can invoke
+the build script like this "./build.sh -Dbundle=art -Dpassword=???" and this
+will set the properties for you and you won't have to type them 
+every time.
+
+</echo>   
+         <input message="Please enter the password:" addproperty="password"/>
+         <mkdir dir="${base}/data/"/>        
+		 <get src="http://simile.mit.edu/private/data/artstor/artstor-xml${data.flavor}.zip" 
+             dest="${base}/data/artstor-xml${data.flavor}.zip" 
+             verbose="true"
+             usetimestamp="true"
+		     username="simile"
+		     password="${password}"
+	      />
+       	</then>
+      </if>		
+      <unzip src="${base}/data/artstor-xml${data.flavor}.zip" dest="${base}/data" overwrite="false"/>
+	</target>
+
+    <target name="transform">
+    	 <if>
+        <and>
+          <uptodate targetfile="${base}/data/${model}.rdf" srcfile="${base}/data/${model}.xml"/>
+          <uptodate targetfile="${base}/data/${model}.rdf" srcfile="${base}/stylesheets/artstor.xsl"/>
+          <uptodate targetfile="${base}/data/${model}.rdf" srcfile="${stylesheets}/common.xsl"/>
+        </and>
+        <then>
+          <echo message="${model}.rdf is up-to-date"/>
+        </then>
+        <else>
+          <echo message="Processing ${model}.rdf"/>
+          <java classname="net.sf.saxon.Transform" classpathref="classpath">
+          	<arg line="-o ${base}/data/${model}.rdf ${base}/data/${model}.xml ${base}/stylesheets/artstor.xsl"/>
+          </java>
+        </else>
+      </if>
+    </target>   
+		
+	<target name="data" depends="prepare">
+     <foreach list="${models}" target="transform" param="model" delimiter="," inheritall="true" inheritrefs="true"/>
+    </target>
+
+	<target name="copy-data">
+	    <copy todir="${data.dest}">
+	      <fileset dir="${base}/data">
+	        <include name="*.rdf"/>
+	      </fileset>
+	    </copy>
+	</target>
+	
+	<target name="clean">
+  	  <delete quiet="true">
+        <fileset dir="${base}/data">
+          <include name="*.xml"/>
+          <include name="*.rdf"/>
+        </fileset>
+      </delete>
+	</target>
+		
+</project>

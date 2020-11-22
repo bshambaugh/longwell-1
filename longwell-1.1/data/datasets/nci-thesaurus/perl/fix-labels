@@ -1,0 +1,15 @@
+#!/usr/bin/perl
+
+open(IN, "Thesaurus.owl") ||
+    die "Could not open\n";
+
+while(<IN>) {
+    $line = $_;
+    if ($line =~ /rdfs:label>[^<]*<\/rdfs:label/) {
+	$line =~ s/_/ /g;
+    }
+    print $line;
+}
+
+close(IN) ||
+    die "Could not close\n";

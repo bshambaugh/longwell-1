@@ -1,0 +1,164 @@
+/*
+ * This is the stylesheet for the knowle browser. It assumes
+ * that the default stylesheet is inherited.
+ * 
+ * NOTE: no metadata-specific style information should be contained here
+ *
+ */
+
+/* ------- header colors indicate the browser ---- */
+ 
+#header {
+    background-color: #eef;
+    border-bottom: 1px solid #bbf;
+}
+
+/* ------- Params  -------------------------- */
+
+.param {
+    border: 1px solid #ccf;
+    margin: 20px 5px 5px 5px;
+    padding: 5px;
+}
+
+.param .title {
+    background-color: #eef;
+    text-transform: uppercase;
+    margin: -15px 0 0 0;
+    width: 75%;
+    padding: 0 0 2px 4px;
+    letter-spacing: 0.2em;
+}
+
+.param .note {
+    display: block;
+    font-size: 0.8em;
+}
+
+#params input {
+    background: #ccf;
+    border: 1px solid #bbf;
+    font-family: "georgia", "times", "times new roman", serif;
+    font-size: 0.8em;
+}
+
+/* ------- Sources ------------------------ */
+
+.center {
+    text-align: center;
+}
+
+/* Main section */
+div.rdf {
+  width: 60%;
+  margin: 25px 0 40px 3%;
+}
+
+/* Side bit with references from other things */
+div.otherrefs, div.otherprops {
+  float: right;
+  width: 30%;
+  margin: -2px 5px 5px 0;
+  background: #eef;
+  border-left: 1px solid #ccf; 
+  border-right: 1px solid #ccf; 
+  border-bottom: 1px solid #ccf;
+  clear: right;
+}
+
+div.otherprops {
+  border-top: 1px solid #ccf;
+}
+
+/* Much fiddling with list layout. Best ignored...*/
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul ul {
+  margin-left: 2em;
+}
+
+li {
+  padding: 0.05em;
+}
+
+.spacer {
+    clear: both;
+    line-height: 0;
+}
+
+div.objectHead {
+    text-align: center;
+    border: 1px solid #ccf;
+    padding: 5px;
+}
+
+div.objectHead div.objectTitle {
+    font-family: "verdana", "helvetica", "arial", sans-serif;
+    letter-spacing: 0.2em;
+    margin-bottom: 5px;
+    font-size: 1.5em;
+}
+
+div.objectHead div.objectTitle div.objectTitleURI {
+    font-family: "courier", fixed;
+    letter-spacing: normal;
+    font-size: 0.8em;
+}
+
+table.frames div.objectHead div.objectTitle {
+    letter-spacing: 0.2em;
+    margin-bottom: 5px;
+    font-size: 1.25em;
+}
+
+div.otherrefs h3, div.otherprops h3 {
+    text-align: center;
+    color: #aaa;
+    letter-spacing: 0.1em;
+    margin: 1px;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid #ccf;
+    padding: 2px;
+}
+
+div.ref {
+    display: block;
+    padding: 5px 2px;
+    border-top: 1px solid #ccf;
+}
+
+div.error {
+    color: #f33;
+    padding: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+table.literals tr:hover, table.resources tr:hover {
+    background: #e0e0e0;
+}
+
+td.label {
+    width: 30%;
+    vertical-align: top;
+}
+
+td {
+    padding: 2px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.right {
+    float: right;
+    padding: 2px;
+}

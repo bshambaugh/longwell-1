@@ -1,0 +1,49 @@
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rss:     <http://purl.org/rss/1.0/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix doap:    <http://usefulinc.com/ns/doap#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix :        <#> .
+
+<> 
+    dc:title        "DOAP SIMILE browser display configuration"^^xsd:string ;
+    dc:creator      "Ryan Lee"^^xsd:string ;
+    dc:publisher    "The SIMILE Project"^^xsd:string ;
+    dc:date         "2004-02-17" ;
+    dc:format       "RDF"^^xsd:string .
+
+# Display parts
+:Doap a disp:BrowserConfiguration ;
+ disp:lang "fr"^^xsd:string .
+
+:Doap disp:displayProperties (
+ doap:name
+ rdf:type
+ doap:homepage
+ doap:created
+ doap:description
+ doap:mailing-list
+ doap:release
+) .
+
+:Doap disp:displayFacets (
+ doap:maintainer
+ doap:license
+ doap:category
+) .
+
+:Doap disp:displayClasses (
+ doap:Project
+ foaf:Person
+) .
+
+:Doap disp:propertyObjectDisplay (
+ doap:homepage
+ doap:mailing-list
+) .
+
+doap:homepage a disp:Link .
+doap:mailing-list a disp:Link .

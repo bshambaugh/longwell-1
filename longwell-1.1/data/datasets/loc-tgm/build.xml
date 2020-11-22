@@ -1,0 +1,82 @@
+<project name="loc-tgm" default="data">
+
+	<!--+
+	    | Contract
+	    |
+	    |      call the "data" target with the following properties set:
+	    |              base is the location of this dataset package relative to the main build.xml file
+	    |              
+	    |  assumes all directories already exist
+	    |
+	    +-->
+	
+	<description>
+     Manages the Library of Congress Thesaurus of Graphic Materials
+	</description>
+
+	<target name="prepare">
+      <if>
+      	<not><available file="${base}/data/loc-tgm.zip"/></not>
+        <then>
+         <mkdir dir="${base}/data/"/>        
+		 <get src="http://simile.mit.edu/repository/datasets/loc-tgm/data/loc-tgm.zip" 
+             dest="${base}/data/loc-tgm.zip" 
+             verbose="true"
+             usetimestamp="true"
+	      />
+       	</then>
+      </if>		
+	  <unzip src="${base}/data/loc-tgm.zip" dest="${base}/data/" overwrite="false"/>
+	</target>
+	
+	<target name="compile">
+      <javac srcdir="${base}/java" destdir="${base}/java"/>		
+	</target>
+	
+	<target name="data" depends="compile,prepare">
+      <if>
+        <and>
+          <uptodate targetfile="${base}/data/locTGM-1.rdf" srcfile="${base}/java/LocTGMConverter.java"/>
+          <uptodate targetfile="${base}/data/locTGM-1.rdf" srcfile="${base}/data/tgm1.txt"/>
+          <uptodate targetfile="${base}/data/locTGM-2.rdf" srcfile="${base}/java/LocTGMConverter.java"/>
+          <uptodate targetfile="${base}/data/locTGM-2.rdf" srcfile="${base}/data/tgm2.txt"/>
+        </and>
+        <then>
+          <echo message="Library of Congress Thesaurus of Graphic Materials is up-to-date"/>
+        </then>
+        <else>
+          <echo message="Processing Library of Congress Thesaurus Of Graphic Materials (part 1)"/>
+          <java classname="LocTGMConverter"
+            classpath="${base}/java"
+            output="${base}/data/locTGM-1.rdf">
+              <arg value="${base}/data/tgm1.txt"/>
+          </java>
+          <echo message="Processing Library of Congress Thesaurus Of Graphic Materials (part 2)"/>
+        	  <java classname="LocTGMConverter"
+            classpath="${base}/java"
+            output="${base}/data/locTGM-2.rdf">
+              <arg value="${base}/data/tgm2.txt"/>
+          </java>
+        </else>
+      </if>  
+    </target>
+
+	<target name="copy-data">
+	    <copy todir="${data.dest}">
+	      <fileset dir="${base}/data">
+	        <include name="*.rdf"/>
+	      </fileset>
+	    </copy>
+	</target>
+	
+	<target name="clean">
+	  <delete quiet="true">
+	    <fileset dir="${base}/data">
+	      <include name="*.txt"/>
+	      <include name="*.rdf"/>
+	    </fileset>
+	  </delete>
+	  <delete quiet="true" file="${base}/java/LocTGMConverter.class"/>
+	</target>
+		
+</project>

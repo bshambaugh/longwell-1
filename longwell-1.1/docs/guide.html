@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://simile.mit.edu/styles/default.css"
+ type="text/css">
+  <title>SIMILE | Longwell</title>
+  <style>
+     #body {
+        margin-bottom: 100px;
+     }
+     #body .notice {
+        margin: 100px 15px 10px 15px;
+     }
+    </style>
+</head>
+<body>
+<!--#include virtual="sidebar.html" -->
+<ul id="path">
+  <li><a href="http://simile.mit.edu/" title="Home">SIMILE</a></li>
+  <li><a href="http://simile.mit.edu/longwell/" title="Longwell home">Longwell</a></li>
+  <li><span>User Guide</span></li>
+</ul>
+<div id="body">
+<h1>Longwell User Guide</h1>
+<h2><a name="overview"></a>Overview</h2>
+<p>Longwell is a web application designed to let you browse and search
+an <a href="http://www.w3.org/TR/rdf-primer/">RDF</a> model,
+especially when big (we use it for datasets that have 500k statements).
+</p>
+<p>Learning to configure Longwell to suit your needs requires some
+basic knowledge of <a href="http://www.w3.org/2001/sw/">Semantic Web</a>
+concepts as well as a familiarity with <a
+ href="http://www.w3.org/2000/10/swap/Primer" title="N3 Primer">RDF/N3
+syntax</a>. Also, a reasonable idea of the <span
+ style="font-style: italic;">shape</span> of the data you plan on
+browsing before getting started is helpful, at least the classes or
+properties that you want to focus on: this dramatically increases the
+usefulness of the browsing experience. </p>
+<p>This guide provides information on where to find configurable
+elements of Longwell and how to change their settings. </p>
+<p>Longwell was designed to be configurable without requiring people to
+write and/or modify its source code. </p>
+<p>Also, in order to to help you understand how Longwell can fit your
+needs and how flexible it can be, &nbsp; we ship it with a number of
+example data bundles that come from very different domains. </p>
+<h2><a name="installation"></a>Installation</h2>
+<p>
+Longwell is a web application written in Java and will run in any
+J2EE-compatible servlet container or application server. For your
+convenience, we have prepackaged one in the distribution and wrote
+scripts to help you getting ready without hassle, even if you are not
+familiar with Java application serving environments. On the other hand,
+if you are, Longwell can be deployed into your existing servlet
+container with ease.</p>
+<p>The only requirement for Longwell is a Java Virtual Machine (JVM)
+version 1.4.x installed on your operating system (we have not tried it
+on a 1.5 JVM yet, if you do, let us know). If you don't have a JVM
+installed, you can download one for free at the <a
+ href="http://www.java.com/">Java main web site</a>.  Our build process
+currently requires that you have a development kit version of the Java
+toolset installed; anything other than a simple 'Java VM' installation
+will suffice.  For example, try using the
+<a href="http://java.sun.com/j2se/1.4.2/download.html">J2SE SDK 1.4.2</a>.</p>
+<p>In order to get Longwell up and running with one of the example data
+bundles that we ship, you can follow the following list of instructions:</p>
+<ol class="steps">
+  <li>Open your favorite shell/terminal on Unix/MacOSX or
+command
+line on Windows</li>
+  <li><code>cd</code> to the base directory of the Longwell distribution</li>
+  <li>Type <code>"./build.sh"</code> on Unix/MacOSX or "<code>build.bat</code>"
+on Windows. </li>
+  <li>Here the system will ask you to select a data bundle: type the
+one you would like to browse. </li>
+  <div class="note"> the 'art-private' data bundle is protected for
+copyright
+reasons and will ask you for a password.</div>
+  <li>Type <code>"./longwell.sh run"</code> on Unix/MacOSX or "<code>longwell.bat
+run</code>" on Windows.</li>
+  <div class="note">depending on the choosen data bundle, longwell
+might take
+a while to start and during initialization time, the web application
+won't be responsive.</div>
+  <li>Once Longwell has stopped initializing, loading and processing
+the data, point your browser at <a
+ href="http://localhost:8080/longwell">http://localhost:8080/longwell</a></li>
+</ol>
+<p>If you know want to see another data bundle, do:
+</p>
+<ol class="steps">
+  <li>Type <code>"./build.sh clean-webapp"</code> (this will clean the
+webapp from
+data)</li>
+  <li>Start from step 4. above. </li>
+</ol>
+<h2><a name="ui"></a>The User Interface</h2>
+<p class="figure"><img alt="Longwell Screenshot"
+ src="images/main-screenshot.png" style="width: 667px; height: 570px;">
+</p>
+<p>The most important aspect of Longwell is the "faceted browsing" UI
+paradigm.
+</p>
+<p>A <em>facet</em> is a particular
+metadata field that is considered important for the dataset that we are
+browsing. Since Longwell is a general-purpose browser, it has no notion
+of particular metadata schemas, so the facets must be configured before
+Longwell can browse a dataset.
+</p>
+<p>Once the facets are selected for a specific dataset (this is done
+before running the web application) Longwell starts processing the
+dataset and extracts a list of facets, their values and the number of
+times this facet value occurs in the dataset. This is shown in the
+right hand side, where each facet is boxed independently.
+</p>
+<p class="screenshot"><img alt="Facet Box" src="images/facet.png"
+ style="width: 292px; height: 219px;">
+</p>
+<p>By clicking on a facet value, Longwell adds a facet restriction and
+eliminates all items that do not fulfill that restriction. The facet
+pane on the right is also updated, showing the facets and their values
+that are available in that sub-dataset for further drill-down.
+</p>
+<p>When no more facet restrictions are possible, the right pane will be
+empty.</p>
+<p>Clicking on the right pane has the effect of "zooming in" the
+dataset by locally removing from the view anything that it's not of
+interest at that particular time. The user also has the ability to
+"zoom out" by removing a restriction that was previously selected (top
+right box).</p>
+<p class="screenshot"><img alt="Restriction Box"
+ src="images/restrictions.png" style="width: 329px; height: 105px;">
+</p>
+<p>The result of the restriction is a subset of the items available in
+the dataset (what is considered "an item" is also a configurable
+property of Longwell). Longwell can also be configured to display
+particular properties of the items in various ways, and, mixing with
+CSS stylesheets, it is possible to obtain pleasant presentations of
+them, without having to modify Longwell's source code.
+</p>
+<p class="screenshot"><img alt="Item" src="images/item.png"
+ style="width: 352px; height: 232px;">
+</p>
+<p>By clicking on any of the item
+properties, the current restrictions are removed and the browsing is
+then restricted to all items that contain that particular value in any
+facet. At this point, further restrictions can be added by clicking on
+the right pane.
+</p>
+<p>
+Longwell also gives the ability to perform a "free text" restriction,
+this reduces the browsed dataset to all items that contain the searched
+strings in their properties values. This restriction is triggered by
+entering text in the "free text search" box.</p>
+<p>Also, since the different number of facet values can become very
+large,
+Longwell provides a "drill as you type" facet search field that is
+used, in place, to spot the facet values of interest.</p>
+<p>As you can see, all the RDF complexity is hidden to the user. This
+is
+done on purpose, since Longwell is aimed to be used by non-RDF-savy end
+users, but for those who want to see "behind the scenes" and understand
+the RDF model that backs up this data, you can click on the RDF icon of
+any item to have a detailed RDF-centric view of the data you are
+looking at.</p>
+<h2><a name="data"></a>The Data Collection</h2>
+<p>In order to make it easier for people to use and understand
+Longwell, we ship it with a collection of freely redistributable
+datasets, ontologies and data bundles.</p>
+<h3>Ontologies</h3>
+<p>Ontologies are used mainly to render resources with appropriate
+labels and to indicate semantic information (such as equivalences or
+subclassing) that drives the metadata inferencing. Many ontologies are
+shipped in the Longwell distribution,
+particularly <acronym title="Resource Description Framework">RDF</acronym>,
+RDF Schema, <acronym title="Dublin Core">DC</acronym>, and <acronym
+ title="Web Ontology Language">OWL</acronym>. Also we provide our own
+for a number of datasets that do not have an official RDF ontology
+available.</p>
+<h3>Datasets</h3>
+<p>Longwell ships with a number of RDF datasets or XML datasets with
+conversion tools or scripts that convert them into RDF ones. For
+up-to-date information on the available datasets and their origin,
+consult the <a
+ href="http://simile.mit.edu/repository/datasets/index.html">dataset
+list</a> from the simile public repository.</p>
+<h3>Bundles</h3>
+<p>The SIMILE team believes that the power of the semantic web can be
+unleashed when data can be reused "as-is" and combined in meaningful
+ways. This is also called the "network effect" or "data synergy". In
+order to show this, the Longwell build system was designed to have a
+notion of a dataset, which is an organic database that originates from
+a single group or entity and a bundle, an aggregation of datasets,
+ontologies, configurations and optional "glue data" that makes it
+possible to show the power of the semantic web in merging heterogeneous
+metadata that was not designed, up front, to be joined and reused in
+such a way.
+</p>
+<p>For up-to-date information on the available bundles and their
+contents, consult the <a
+ href="http://simile.mit.edu/repository/longwell/trunk/data/bundles/index.html">bundles
+list</a> from the simile public repository.</p>
+<h2><a name="browsing"></a>Configuration</h2>
+<p>Longwell ships with pre-configured data bundled, but if you want to
+use Longwell to browse your own RDF datasets, you need to configure it
+with some data-specific configuration in order for it to be able to
+operate.
+</p>
+<h3>Display Configuration
+</h3>
+<p>There most critical part to configure is the "display configuration"
+that tells Longwell how to interpret the metadata (for example, what
+are the facets) and how to visualize it (for example, if the value of a
+property should be treated as a string, as a URL or as the pointer to
+an external object, say, an image).
+</p>
+<p>This configuration is an RDF model and we found out that for writing
+RDF by hand, the N3 syntax feels a lot more natural than the RDF/XML
+one. The file is normally called <span style="font-style: italic;">config.n3</span>
+and is located in the conf
+directory of every data bundle (in the <span
+ style="font-style: italic;">data/bundles/*/conf</span> directory,
+where * means the name of the bundle)
+</p>
+<p>Here is an example for a configuration file for the data bundle
+about people (taken from the one shipped with Longwell and simplified a
+little for readability):
+</p>
+<pre>@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .<br>@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .<br>@prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .<br>@prefix rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .<br>@prefix disp:    &lt;http://simile.mit.edu/2004/02/ontologies/display#&gt; .<br>@prefix :        &lt;#&gt; .<br><br>:People a disp:BrowserConfiguration ;<br> disp:lang "en" .<br><br>:People disp:displayProperties (<br> foaf:name <br> foaf:nick<br> foaf:mbox<br> foaf:depiction<br> rdfs:seeAlso<br> foaf:homepage<br> dc:thumbnail<br> dc:description<br> foaf:plan<br>) .<br><br>:People disp:displayFacets (<br> rdf:type<br> foaf:knows<br>).<br><br>:People disp:displayClasses (<br> foaf:Person<br> foaf:Image<br>) .<br><br>:People disp:propertyObjectDisplay (<br> rdfs:seeAlso<br> foaf:depiction<br> foaf:mbox<br> foaf:homepage<br> dc:thumbnail<br>) .<br><br>rdfs:seeAlso a disp:Link .<br>foaf:depiction a disp:GetImage .<br>foaf:mbox a disp:Link .<br>foaf:homepage a disp:Link .<br>dc:thumbnail a disp:GetImage .<br></pre>
+<p>The first part is composed by the prefixes, these indicate what what
+URI those namespace prefixes are bound to in this particular RDF model:<br>
+</p>
+<pre>@prefix dc:      &lt;http://purl.org/dc/elements/1.1/&gt; .<br>@prefix rdf:     &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .<br>@prefix foaf:    &lt;http://xmlns.com/foaf/0.1/&gt; .<br>@prefix rdfs:    &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .<br>@prefix disp:    &lt;http://simile.mit.edu/2004/02/ontologies/display#&gt; .<br>@prefix :        &lt;#&gt; .<br></pre>
+<p>The last line basically indicates that lack of prefix is bound to
+the dummy URI. This is normally used to indicate that the data
+contained in the RDF model is not really to be used in a semantic web,
+but has just local meaning. At this point we are ready to tell our
+story with this model, so the first statement<br>
+</p>
+<pre>:People a disp:BrowserConfiguration ;<br> disp:lang "en" .</pre>
+<p>indicates that the concept <span style="font-style: italic;">:People</span>
+is of type
+<span style="font-style: italic;">disp:BrowserConfiguration</span>.
+This will be used by Longwell to know that
+this information should be used to configure itself.  It also indicates
+that the default language selection, when faced with multiple language
+options, is the language code "en."  The next group of
+statements defines what properties should be presented to the UI:<br>
+</p>
+<pre>:People disp:displayProperties (<br> foaf:name<br> foaf:nick<br> foaf:mbox<br> foaf:depiction<br> rdfs:seeAlso<br> foaf:homepage<br> dc:thumbnail<br> dc:description<br> foaf:plan<br>) .<br></pre>
+<p>In particular, this says that the <span style="font-style: italic;">dist:displayProperties</span>
+for the
+<span style="font-style: italic;">:People</span> browser configurations
+are a <span style="font-style: italic;">rdf:List</span> and
+that the items are the list of the values that
+this <span style="font-style: italic;">disp:displayProperty</span>
+assumes.<br>
+</p>
+<p>The next group of statements indicates what fields Longwell should
+interpret as facets:<br>
+</p>
+<pre>:People disp:displayFacets (<br> rdf:type<br> foaf:knows<br>).</pre>
+<p>Here, the two facets are <span style="font-style: italic;">rdf:type</span>
+and <span style="font-style: italic;">foaf:knows</span>, which
+basically
+means that we are interested in the types of our data items and about
+their <span style="font-style: italic;">foaf:knows</span> property.<br>
+</p>
+<p>But Longwell needs to know what data should be considered an item,
+so here that's next:<br>
+</p>
+<pre>:People disp:displayClasses (<br> foaf:Person<br> foaf:Image<br>) .<br></pre>
+<p>where these statements indicate that we consider first-class data
+items in our datasets those of class <span style="font-style: italic;">foaf:Person</span>
+and <span style="font-style: italic;">foaf:Image</span>, while
+everything else is to be considered corollary information around them.<br>
+</p>
+<pre>:People disp:propertyObjectDisplay (<br> rdfs:seeAlso<br> foaf:depiction<br> foaf:mbox<br> foaf:homepage<br> dc:thumbnail<br>) .</pre>
+<p>So, we have already identified the <span style="font-style: italic;">dist:displayProperties</span><span
+ style="font-style: italic;"></span> and this will make those
+properties show up for the item in the order
+listed, if they are available (keep in mind that RDF data tends to be
+very semi-structured, so it's natural, when you aggregate data from
+different sources, that some properties might not be there).<br>
+</p>
+<p>On the other hand, properties in <span style="font-style: italic;">disp:propertyObjectDisplay</span>
+will be transformed to one of the options
+(external link, fetched image, replacement image, etc.) as specified in
+the configuration (see <span style="font-style: italic;"></span>below).&nbsp;
+For this reason, properties in <span style="font-style: italic;">dist:propertyObjectDisplay</span>
+should be a subset of those in <span style="font-style: italic;">disp:displayProperties</span>.
+</p>
+At this point, we have identified all the information that Longwell
+needs to operate on the data level, but then we might want to add a
+little more functionality by indicating how some of this information
+should be treated:
+<p></p>
+<pre>rdfs:seeAlso a disp:Link .<br>foaf:depiction a disp:GetImage .<br>foaf:mbox a disp:Link .<br>foaf:homepage a disp:Link .<br>dc:thumbnail a disp:GetImage .</pre>
+<p>so, an <span style="font-style: italic;">rdfs:seeAlso</span>
+property should be considered a <span style="font-style: italic;">disp:Link</span>,
+therefore displayed in a way so that users can click on it (in HTML
+this translates into an <span style="font-style: italic;">&lt;a
+href=""&gt;</span> tag), foaf:depiction should
+be considered as a URL reference pointing to an image (in HTML this
+will be translated into an <span style="font-style: italic;">&lt;img
+src=""&gt;</span> tag), and so on.<br>
+</p>
+<h3>Bundle Configuration</h3>
+<p>Each bundle has a configuration file that is used by the build
+system to prepare the Longwell web application. This file is called <span
+ style="font-style: italic;">data.properties</span> and it's found in
+the root directory of each data
+bundle. This is a Java properties file and follows the usual
+"name=value" convention.<br>
+</p>
+<p>The most important configurations are the first three properties, here
+is an example taken from the art-public bundle:<br>
+</p>
+<pre># list of datasets used<br>bundle.datasets = ocw,via,loc-tgm<br><br># controls the inferencing<br>inferencing = yes<br><br># dynamically allow addition of data by URI to the store<br>allowAdd = true</pre>
+<p>the first properties indicate that three datasets (namely <span
+ style="font-style: italic;">ocw</span>, <span
+ style="font-style: italic;">via</span>
+and <span style="font-style: italic;">loc-tgm</span>) are used by this
+bundle, the second indicates that
+Longwell should perform inferencing upon loading the RDF models
+contained in this bundle, and the third allows any user to add more
+data to the model by providing a URI, modifying the UI slightly to
+add a text box to the navigation interface..
+</p>
+
+<h4>Scuttering</h4>
+
+<p>Thanks to <a href="http://sw.deri.org/~aharth/">Andreas Harth</a> and
+his work on <a href="http://sw.deri.org/2003/seco/">SECO</a> scutter, Longwell
+can also 'scutter' (or spider) for RDF across the web based on
+<em>rdfs:seeAlso</em> links.</p>
+
+<pre># scutter properties<br>scutter.enabled = true<br><br># how many levels down to follow rdfs:seeAlso links; 0 for none at all<br>scutter.depth = 0<br><br># where to index the scutter internal model<br>scutter.indexPath = /WEB-INF/scutter-index</pre>
+
+<h3>Dataset Configuration</h3>
+<p>Each dataset contains a <span style="font-style: italic;">build.xml</span>
+file that indicates some activity
+that the build system has to perform on the dataset before being
+included in the Longwell web application for it to load them when
+started.
+</p>
+<p>This action could just do nothing (if the RDF is already there), or
+it could do things like unpacking a zip file (in case the RDF is
+compressed) or more complex things like running an XSLT stylesheet on
+top of an XML file to generate an RDF/XML representation of it, or even
+running a custom script/program to generate the RDF model from other
+data.
+</p>
+<h2><a name="browsing_your_data"></a>Browsing Your Own Data
+</h2>
+<p>The Longwell build system was designed to be easily extensible so
+that you can plug in your own bundles, datasets and ontologies.
+</p>
+<h3>Using the Longwell Build System
+</h3>
+<p>The <span style="font-style: italic;">./data</span> directory of
+the Longwell distribution is where all
+the data is stored.
+</p>
+<p>If you have more than one dataset to merge, we suggest you to create
+a bundle and then reference them from it.
+</p>
+<p>If you just want to browser one single dataset that you have already
+in RDF, probably the easiest way is just to create your own bundle and
+put those RDF files in the <span style="font-style: italic;">./data</span>
+directory inside your bundle, they
+will be copied over by the build system into the web application.
+</p>
+<h3>Modifying the Web Application Directly
+</h3>
+<p>Alternatively, you can ignore the build system entirely and work
+directly with the Longwell web application. </p>
+<p>At startup, Longwell looks for files with the <span
+ style="font-style: italic;">.rdf</span>, <span
+ style="font-style: italic;">.rdfs</span>, <span
+ style="font-style: italic;">.owl</span> and
+<span style="font-style: italic;">.n3</span> extensions in the <span
+ style="font-style: italic;">./WEB-INF/data/</span> folder of the web
+application, so
+it is enough that you place all the RDF files that you want Longwell to
+load and it will.
+</p>
+<p>In any case, remember to modify the <span
+ style="font-style: italic;">config.n3</span> file or Longwell might
+not be able to show you anything.
+</p>
+<h2><a name="storage"></a>Data Storage</h2>
+<p>Longwell can read and acquire data from several different types of
+storage systems besides the bundling process described above. The
+simplest method for data storage is through file bundles, but you may
+have needs that a more advanced storage system can better meet. The
+term "repository" will be used to indicate a storage system from here
+on.
+</p>
+<h3>Alternate Repositories and Repository Configuration</h3>
+<p>Currently, Longwell supports five different repositories:</p>
+<ul>
+  <li><a href="#store-jena">Jena</a></li>
+  <li><a href="#store-joseki">Joseki</a></li>
+  <li><a href="#store-kowari">Kowari</a></li>
+  <li><a href="#store-3store">3store</a></li>
+  <li><a href="#store-sesame">Sesame</a></li>
+</ul>
+<p>Configuring Longwell to switch to a different repository requires
+editing the <span style="font-style: italic;">data.properties</span>
+file found in a bundle. All of the sample
+<span style="font-style: italic;">data.properties</span> files provided
+in the distribution contain all the key
+/ value pairs allowed for configuration, so some of the core options
+can be changed by uncommenting the desired line and commenting out the
+default.
+</p>
+<p>The type of repository is determined by the <span
+ style="font-style: italic;">repository.type</span> key (by
+default, 'files'):
+</p>
+<pre>repository.type = files<br>#repository.type = database<br>#repository.type = kowari-memory<br>#repository.type = kowari<br>#repository.type = joseki<br>#repository.type = 3store<br>#repository.type = sesame<br></pre>
+<p>The model used for querying the repository is given by the queryType
+key (by default, 'JenaLocalAPIModel'):
+</p>
+<pre>queryType = JenaLocalAPIModel<br>#queryType = JenaLocalRDQLModel<br>#queryType = KowariLocalAPIModel<br>#queryType = KowariITQLModel<br>#queryType = JosekiRDQLModel<br>#queryType = ThreeStoreRDQLModel<br>#queryType = SesameRDQLModel<br>#queryType = SesameSeRQLModel<br></pre>
+<p>Note that the correspondence between repositories and querying
+models is not one-to-one; more than one querying model might be used
+per repository.
+</p>
+<h3><a name="store-jena" ide="store-jena"></a>Jena</h3>
+<p><a href="http://jena.sourceforge.net/">Jena</a> can either read
+files into memory or connect to a Jena-configured database. Use 'files'
+for the in-memory repository generated by files, 'database' for any of
+the databases.</p>
+<p>These keys must be assigned values for the file-based in-memory
+repository:</p>
+<pre>repository.type = files<br><br>bundle.datasets = [comma-separated list of datasets]<br>inferencing = [yes|no]<br>queryType = [JenaLocalAPIModel|JenaLocalRDQLModel]<br><br># data path for file repository, relative to the webapp directory<br># by default, the path is WEB-INF/data<br>data.path = WEB-INF/data<br></pre>
+<p>The database repository can be based on either MySQL, PostgreSQL, or
+Oracle (though we at Simile haven't tested Oracle with Jena yet).
+Installing, configuring, and running the database systems is not within
+the scope of this guide, but more information can be found in the <a
+ href="http://jena.sourceforge.net/DB/howto.html">Jena MySQL how-to</a>
+and the <a href="http://jena.sourceforge.net/DB/postgresql-howto.html">Jena
+PostgreSQL how-to</a>. You will need to initialize a user and a
+database with the appropriate permissions. To function with Longwell, a
+JDBC2 driver .jar for the particular database you want to use must be
+deposited in the <span style="font-style: italic;">lib/repository/</span>
+directory. Links to appropriate <span style="font-style: italic;">.jar's</span>
+can be found in the Jena how-to documentation.</p>
+<p>Data must be injected into the database in a form Jena will
+recognize. To assist you, a Java command line tool was created. Found
+in the tools package (<span style="font-style: italic;">edu.mit.simile.tools</span>),
+LoadDb takes the the
+database type, filename, database name, model name, and username as
+arguments:</p>
+<pre>% [~/longwell/trunk] ./tools.sh LoadDb MySQL mydata.rdf triples mydata myusername<br><br>or<br><br>C:\longwell\trunk\&gt; tools.bat LoadDb MySQL mydata.rdf triples mydata myusername<br></pre>
+<p>These keys must be assigned values for the database repository,
+depending on which specific database is used:</p>
+<pre>repository.type = database<br><br>queryType = [JenaLocalAPIModel|JenaLocalRDQLModel]<br>database.type = [MySQL|PostgreSQL]<br><br># MySQL config options, for database.type = MySQL<br>mysql.classname = com.mysql.jdbc.Driver<br>mysql.database = [name of database]<br>mysql.user = [username of database user]<br>mysql.password = [password of database user]<br>mysql.model = [name of model]<br><br># PostgreSQL config options, for database.type = PostgreSQL<br>postgresql.classname = org.postgresql.Driver<br>postgresql.database = [name of database]<br>postgresql.user = [username of database user]<br>postgresql.password = [password of database user]<br>postgresql.model = [name of model]<br></pre>
+<h3><a name="store-joseki" id="store-kowari"></a>Joseki</h3>
+<p><a href="http://www.joseki.org/">Joseki</a> can be run as a remote
+repository. There is a <a href="http://www.joseki.org/publishing.html">quick
+guide</a> to publishing a Joseki repository available to cover the
+installation, configuration, and running of a Joseki instance. The <span
+ style="font-style: italic;">joseki .jar</span> is distributed with
+Longwell.</p>
+<p>Your model must support RDQL queries (in the Joseki configuration,
+you should have your model with <span style="font-style: italic;">'joseki:hasQueryOperation
+joseki:BindingRDQL'</span> as one of the statements). Record the base
+URI from
+which your model is being served, then use it as the value of the
+joseki.uri key:</p>
+<pre>repository.type = joseki<br><br>queryType = JosekiRDQLModel<br>joseki.uri = [joseki model URI]<br># e.g., joseki.uri = http://localhost:2020/mymodel<br></pre>
+<h3><a name="store-kowari" id="store-kowari"></a>Kowari</h3>
+<p><a href="http://www.kowari.org/">Kowari</a> can be run with Longwell
+as either an in-memory repository or a remote repository. The in-memory
+repository does not require Kowari to be running in a separate instance
+and is akin to running with Jena in 'files' mode. Files will be loaded
+from the specified data path.</p>
+<p>Kowari's .jar's are not distributed with Longwell. Place
+<span style="font-style: italic;">driver-1.0.3.jar</span>, <span
+ style="font-style: italic;">trove-1.0.2.jar</span>, <span
+ style="font-style: italic;">activation-1.0.2.jar</span>, <span
+ style="font-style: italic;">saaj-1.1.jar</span>,
+and <span style="font-style: italic;">jrdf-0.2.1.jar</span> in the <span
+ style="font-style: italic;">lib/repositories/</span> directory after
+successfully running Kowari. The latest version tested with Longwell
+was Kowari 1.0.3.</p>
+<pre>repository.type = kowari-memory<br><br>queryType = KowariLocalAPIModel<br>data.path = WEB-INF/data/<br>kowari.model = [kowari model URI]<br># e.g. kowari.model = &lt;rmi://localhost/server1#sampledata&gt;<br></pre>
+<p>To set up Kowari as a remote repository, see the <a
+ href="http://kowari.org/1139.htm">Kowari Installation Guide</a>. After
+setting up Kowari, use the model URI in the <span
+ style="font-style: italic;">kowari.model</span> key. Be aware
+that Kowari's model URI depends on the hostname of the machine it runs
+on; you may find it easier to run in an environment with static domain
+names.</p>
+<pre>repository.type = kowari<br><br>queryType = KowariITQLModel<br>kowari.model = [kowari model URI]<br># e.g. kowari.model = &lt;rmi://localhost/server1#sampledata&gt;<br></pre>
+<h3><a name="store-3store" ide="store-3store"></a>3store</h3>
+<p><a href="http://www.aktors.org/technologies/3store/">3store</a> is
+an RDF-aware repository based on MySQL and written in C. In our
+experience, 3store works best with MySQL 3.x, though your experience
+may differ. You can download it from its <a
+ href="http://sourceforge.net/projects/threestore">Sourceforge project</a>;
+it also has dependencies on the <a href="http://librdf.org/raptor/">Raptor
+RDF Parser Toolkit</a> and <a href="http://httpd.apache.org/">Apache
+HTTPD</a> (any version). You will need to compile 3store with the
+<span style="font-style: italic;">--enable-http</span> option to allow
+queries to 3store over Apache. If you are
+working with large datasets and expect large results from queries, you
+may need to set a higher DEF_MAX_COMP value (defined in
+<span style="font-style: italic;">src/http/mod_3store.c</span>, default
+to 1000 estimated results). The 3store
+Java driver used in Longwell was written by Simile and is distributed
+with Longwell.</p>
+<p>Once 3store is running in concert with Apache, determine the URI
+Apache is configured to serve RDQL requests from (you may have set it
+yourself in the Apache configuration files) and use it as the
+<span style="font-style: italic;">3store.uri</span> key value.
+</p>
+<pre>repository.type = 3store<br><br>queryType = ThreeStoreRDQLModel<br>3store.uri = [URI of 3store model]<br># e.g. 3store.uri = http://localhost/rdql/<br></pre>
+<h3><a name="store-sesame" ide="store-sesame"></a>Sesame</h3>
+<p><a href="http://www.openrdf.org/">Sesame</a> runs as a remote
+repository from any servlet container. The <a
+ href="http://www.openrdf.org/doc/users/index.html">Sesame documentation</a>
+describes configuration using the <a
+ href="http://jakarta.apache.org/tomcat/">Tomcat</a> servlet container.
+Sesame can use its own in-memory repository or MySQL, PostgreSQL, or
+Oracle as data repositories. To set up the Sesame repositories, you can
+either edit the application configuration or run the configuration
+tool. You can then load data into the repository through Sesame's web
+interface. The <span style="font-style: italic;">sesame .jar</span> is
+not distributed with Longwell. It must be
+acquired along with the Sesame distribution. Place sesame.jar in the
+<span style="font-style: italic;">lib/repositories/</span> directory
+after successfully running Sesame.</p>
+<p>Determine the URI from which Sesame is being served, and locate
+which repository you want to query data from and use them as values of
+the relevant keys.
+</p>
+<pre>repository.type = sesame<br><br>queryType = [SesameRDQLModel|SesameSeRQLModel]<br>sesame.uri = [URI of sesame instance]<br># e.g. sesame.uri = http://localhost:8080/sesame/<br>sesame.repository = [name of sesame repository]<br># e.g. sesame.repository = rdbms-rdf-db<br>sesame.user = [sesame username]<br>sesame.password = [sesame password]<br></pre>
+<p class="notice">The most recent version of this guide can be found
+<a href="http://simile.mit.edu/longwell/guide.html"
+ title="Canonical home of this guide">here</a>.
+Please contact the Simile development team with any suggestions or
+errors through
+<script type="text/javascript">
+//<![CDATA[
+
+function hiveware_enkoder(){var i,j,x,y,x=
+"x=\"783d227b402532353a3b36673535363936373639393936393636363a36383639393736" +
+"39363836393938363a363736353938363a363a363a36353639363c363a3637363936383635" +
+"363b363536353636393636393634363536333639363b363a36353639363836393639363639" +
+"37363839363635363536393937363936343639363c36393936363a36373639393936363934" +
+"3639363736393638363a363936373633363a36363639363c363939373639363c3639393636" +
+"39363836353938363939373639363c363a3637363539383639363836393637363a36383636" +
+"3939363a3636363a363836393635363939343639363836393636363a363736363937363739" +
+"3636393939363939383639363a363a363a3639363836393936363939363635363836363635" +
+"3636363336383638363a363636393638363a36353635363836363635363636333637363a36" +
+"3a36383639363c363936373639363836383936363536353636393836393939363a3638363a" +
+"36353635363336393937363936343639363c363939363639363c363939383639363a363536" +
+"33363939363639363c363a3636363a36373636393636353939363936343636393836353635" +
+"3635363c363639353636363336363935353536653a3c3667353a353a3665393939693a3535" +
+"3b393c366736333665393c36663a3b3568396639383968393a3a37393b3665393c35653667" +
+"3635353c3a653a3c356536673a38396839383a36393639343a333938353b353a3538353a35" +
+"653a3b35683a363a3839353a363a373a35353b393c35663635353c353c36653a673a3c2532" +
+"353e7c402a2a3e6972752b6c40333e6c3f7b316f68716a776b3e6c2e40352c7e7c2e407871" +
+"6876666473682b2a282a2e7b317678657677752b6c2f352c2c3e2532327c223b793d27273b" +
+"783d756e6573636170652878293b666f7228693d303b693c782e6c656e6774683b692b2b29" +
+"7b6a3d782e63686172436f646541742869292d333b6966286a3c3332296a2b3d39343b792b" +
+"3d537472696e672e66726f6d43686172436f6465286a297d79\";y='';for(i=0;i<x.leng" +
+"th;i+=2){y+=unescape('%'+x.substr(i,2));}y";
+while(x=eval(x));}hiveware_enkoder();
+
+//]]>
+</script>
+<noscript><p>JavaScript must be enabled to display this email
+address.</p></noscript>
+.</p>
+</div>
+<!--#include virtual="../footer.html" -->
+</body>
+</html>

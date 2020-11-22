@@ -1,0 +1,104 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc:      <http://purl.org/dc/elements/1.1/> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix lome:    <http://www.imsproject.org/rdf/imsmd_educationalv1p2#> .
+@prefix loml:    <http://www.imsproject.org/rdf/imsmd_lifecyclev1p2#> .
+@prefix lomg:    <http://www.imsproject.org/rdf/imsmd_generalv1p2#> .
+@prefix disp:    <http://simile.mit.edu/2004/02/ontologies/display#> .
+@prefix art:     <http://simile.mit.edu/2003/10/ontologies/artstor#> .
+@prefix ocw:     <http://simile.mit.edu/2004/01/ontologies/ocw#> .
+@prefix vra:     <http://simile.mit.edu/2003/10/ontologies/vraCore3#> .
+@prefix via:     <http://simile.mit.edu/2004/06/ontologies/via#> .
+@prefix col:     <http://simile.mit.edu/2004/06/collections#> . 
+@prefix :        <#> .
+
+<> 
+    dc:title        "Configuration for SIMILE browser display (with inference and thumbnails)" ;
+    dc:creator      "Ryan Lee" ;
+    dc:publisher    "The SIMILE Project" ;
+    dc:date         "2004-02-17" ;
+    dc:format       "RDF" .
+
+# Display parts
+:Simile a disp:BrowserConfiguration ;
+    disp:facetValueOrganizeAs disp:HierarchicalOrganization .
+
+:Simile disp:displayProperties (
+ vra:title
+ dc:title
+ vra:creation
+ vra:period
+ dc:description
+ art:thumbnail
+ ocw:linkToImage
+ via:hasImage
+ via:contains
+) .
+
+:Simile disp:displayFacets (
+ rdf:type
+ dct:isPartOf
+ vra:subject
+ art:topic
+ via:workType
+ via:style
+ via:culture
+ vra:creator
+ loml:instructionaldesigner
+ art:geographic
+ dc:source
+) .
+
+:Simile disp:displayClasses (
+ vra:Image
+ lome:LearningResourceType
+ via:Item 
+) .
+
+:Simile disp:propertyObjectDisplay (
+ dc:source
+ art:thumbnail
+ ocw:linkToImage
+ via:hasImage 
+) .
+
+# Display as an image
+art:thumbnail a disp:GetImage .
+ocw:linkToImage a disp:GetImage .
+via:hasImage a disp:GetImage .
+
+# Display icons according to the values
+dc:source a disp:OptionalIcon ;
+  disp:choices (
+    col:artstor
+    col:ocw
+    col:via
+) .
+
+col:artstor a disp:Option ;
+  disp:displayAs [
+    a disp:Image ;
+    disp:mimeType "image/gif" ;
+    disp:imageSrc "images/artstor-logo.gif" ;
+    disp:imageWidth "22" ;
+    disp:imageHeight "22"
+] .
+
+col:ocw a disp:Option ;
+  disp:displayAs [
+    a disp:Image ;
+    disp:mimeType "image/gif" ;
+    disp:imageSrc "images/mit-logo.gif" ;
+    disp:imageWidth "22" ;
+    disp:imageHeight "22" ;
+] .
+
+col:via a disp:Option ;
+  disp:displayAs [
+    a disp:Image ;
+    disp:mimeType "image/gif" ;
+    disp:imageSrc "images/harvard-logo.gif" ;
+    disp:imageWidth "22" ;
+    disp:imageHeight "22" ;
+] .
